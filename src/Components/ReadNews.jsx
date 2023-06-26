@@ -16,10 +16,10 @@ export default function ReadNews(props) {
                         <div className="top-info">
                             <ul>
                                 <li>
-                                    <a href="#"><img src="/assets/img/100x100.png" alt="Author" />Jones Alex</a>
+                                    <a href="#"><img src="/assets/logo-smk.png" alt="Author" />SMK 1 Krian</a>
                                 </li>
                                 <li>
-                                    <i className="fas fa-calendar-alt"></i> Aug 18, 2020
+                                    <i className="fas fa-calendar-alt"></i> {props.news_bulan} {props.news_tanggal}, {props.news_tahun}
                                 </li>
                             </ul>
                         </div>

@@ -8,6 +8,7 @@ import Home from './Pages/Home'
 import ScrollToTop from './Components/ScroltoTo'
 import AboutUs from './Pages/AboutUs'
 import DetailNews from './Pages/DetailNews'
+import NewsListFromKategori from './Pages/NewsListFromKategori'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path='/tentang-kami' element={<AboutUs/>}></Route>
           <Route path='/daftar-berita' element={<NewsList/>}></Route>
           <Route path='/baca-berita/:slug' element={<DetailNews/>}></Route>
+          <Route path='/daftar-berita-berdasarkan-kategori/:slug' element={<NewsListFromKategori/>} ></Route>
         </Routes>
       </Router>
     </>

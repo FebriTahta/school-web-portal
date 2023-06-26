@@ -23,6 +23,7 @@ export default function DetailNews() {
         const response = await data.json();
         setBerita(response.data);
     }
+    
 
     const daftarBeritaPopuler = async () => {
         try {
@@ -51,24 +52,32 @@ export default function DetailNews() {
         // console.log(news_slug);
     }
 
+    const handleGoToBeritaFromKategori = (kategori_slug) => {
+        navigate(`/daftar-berita-berdasarkan-kategori/${kategori_slug}`);
+    }
+
+    const handleGoToDaftarBerita = () =>{
+        navigate('/daftar-berita');
+    }
+
     useEffect(() => {
         thisBerita(slug);
         daftarBeritaPopuler();
         daftarKategori();
-        console.log(slug); 
     }, [slug]);
 
     return(
         <>
             <TopInfo/>
             <HeaderLayout/>
-            <HeroHeading judul={"Daftar Berita"}/>
+            <HeroHeading judul={"Baca Berita"}/>
             <div className="blog-area full-blog right-sidebar full-blog default-padding">
                 <div className="container">
                     <div className="blog-items">
                         <div className="row">
                             <div className="blog-content col-lg-8 col-md-12">
-                                <ReadNews news_image={berita_image+berita.news_image}
+                                <ReadNews news_image={berita_image+berita.news_image} news_tanggal={new Date(berita.created_at).getDate()}
+                                news_bulan = {new Date(berita.created_at).toLocaleString('default', { month: 'short' })} news_tahun={new Date(berita.created_at).getFullYear()}
                                 news_title={berita.news_title} news_desc={berita.news_desc}/>
                             </div>
                             {/* Start Sidebar */}
@@ -112,9 +121,10 @@ export default function DetailNews() {
                                             <ul>
                                                 {(dataKategori ? dataKategori.map((a,i)=>{
                                                     return <li key={i}>
-                                                        <a href="#kategori">{a.kategori_name} <span>{a.news_count}</span></a>
+                                                        <a href="#kategori" onClick={()=> handleGoToBeritaFromKategori(a.kategori_slug)}>{a.kategori_name} <span>{a.news_count}</span></a>
                                                     </li>
                                                 }):null)}
+                                                <li><a href="#" onClick={()=>handleGoToDaftarBerita()}>Semua Kategori</a></li>
                                             </ul>
                                         </div>
                                     </div>

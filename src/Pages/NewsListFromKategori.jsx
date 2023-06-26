@@ -3,10 +3,11 @@ import FooterLayout from '../Layouts/FooterLayout';
 import TopInfo from '../Components/TopInfo';
 import HeroHeading from '../Components/HeroHeading';
 import SingleNewsList from '../Components/SingleNewsList';
-import {useEffect,useState} from "react"
+import {useEffect,useState} from "react";
+import { useParams } from "react-router-dom";
 import { NavLink, useNavigate } from "react-router-dom";
 
-export default function NewsList() {
+export default function NewsListFromKategori() {
 
     const [dataBerita, setdataBerita] = useState([]);
     const [dataBeritaPopuler, setdataBeritaPopuler] = useState([]);
@@ -15,10 +16,17 @@ export default function NewsList() {
     const ApiBeritaPopuler = "http://127.0.0.1:8000/api/berita-populer";
     const ApiKategori = "http://127.0.0.1:8000/api/daftar-kategori";
     const berita_image = "http://127.0.0.1:8000/image_news/";
+    const { slug } = useParams();
     const navigate = useNavigate();
-    
+
     const handleGoToDetailNews = (news_slug) => {
         navigate(`/baca-berita/${news_slug}`);
+    }
+
+    const thisBeritaFromKategori = async (slug) => {
+        const data = await fetch(`http://127.0.0.1:8000/api/daftar-berita-berdasarkan-kategori/${slug}`);
+        const response = await data.json();
+        setdataBerita(response.data);
     }
 
     const daftarBerita = async () => {
@@ -85,10 +93,11 @@ export default function NewsList() {
     const last = dataBerita.last_page;
 
     useEffect(()=>{
-        daftarBerita();
+        // daftarBerita();
+        thisBeritaFromKategori(slug);
         daftarBeritaPopuler();
         daftarKategori();
-    },[]);
+    },[slug]);
 
     return(
         <>
@@ -178,7 +187,7 @@ export default function NewsList() {
                                                     </li>
                                                 }):null)}
                                                 <li>
-                                                    <a href="#" onClick={()=>onHandleSemuaKategori()}>Semua Kategori</a>
+                                                    <a href="#semua_kategori" onClick={()=>onHandleSemuaKategori()}>Semua Kategori</a>
                                                 </li>
                                             </ul>
                                         </div>

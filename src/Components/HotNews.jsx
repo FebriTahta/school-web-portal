@@ -7,6 +7,11 @@ export default function HotNews(params) {
     const apihotNews = "http://127.0.0.1:8000/api/hot-news";
     const apirecentNews = "http://127.0.0.1:8000/api/recent-news";
     const image_src  = "http://127.0.0.1:8000/image_news/";
+    const navigate = useNavigate();
+
+    const handleGoToDetailNews = (news_slug) => {
+        navigate(`/baca-berita/${news_slug}`);
+    }
 
     const daftarhotNews = async () => {
         try {
@@ -74,7 +79,7 @@ export default function HotNews(params) {
                                                     </ul>
                                                 </div>
                                                 <h4>
-                                                    <a href="#">{a.news_title.substring(0,70)}...</a>
+                                                    <a href="#" onClick={()=>handleGoToDetailNews(a.news_slug)}>{a.news_title.substring(0,70)}...</a>
                                                 </h4>
                                                 <p>
                                                     {a.news_desc.replace(/(<([^>]+)>)/gi, "").substring(0,150)}...
@@ -84,7 +89,7 @@ export default function HotNews(params) {
                                                         <i className="fas fa-map-marker-alt"></i>
                                                         SMK 1 Krian
                                                     </div>
-                                                    <a href="#" className="btn circle btn-theme effect btn-sm btn-2hotnews">BACA SEKARANG</a>
+                                                    <a href="#" onClick={()=>handleGoToDetailNews(a.news_slug)} className="btn circle btn-theme effect btn-sm btn-2hotnews">BACA SEKARANG</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -107,7 +112,7 @@ export default function HotNews(params) {
                                             <div className="col-lg-8 col-8">
                                                 <div className="content" style={{padding:"5%"}}>
                                                     <h5>
-                                                        <a href="#">{a.news_title.substring(0,40)}...</a>
+                                                        <a href="#" onClick={()=>handleGoToDetailNews(a.news_slug)}>{a.news_title.substring(0,40)}...</a>
                                                     </h5>
                                                     <p className="text">
                                                         {a.news_desc.replace(/(<([^>]+)>)/gi, "").substring(0,80)}...

@@ -9,14 +9,14 @@ export default function TopInfo() {
                         <div className="item-flex">
                             <ul className="list">
                                 <li>
-                                    <i className="fas fa-phone"></i> Have any question? +123 456 7890
+                                    <i className="fas fa-phone"></i> Have any question? (031) 8971207
                                 </li>
                                 <li>
-                                    <i className="fas fa-bullhorn"></i> <a href="#">Become an Instructor</a>
+                                    <i className="fas fa-bullhorn"></i> <a href="#">Sepak Karir Alumni</a>
                                 </li>
-                                <li>
-                                    <i className="fas fa-briefcase"></i> <a href="#">For Enterprise</a>
-                                </li>
+                                {/* <li>
+                                    <i className="fas fa-briefcase"></i> <a href="#"></a>
+                                </li> */}
                             </ul>
                         </div>
                     </div>
@@ -24,7 +24,7 @@ export default function TopInfo() {
                     <div className="col-lg-5 col-md-12 right-info">
                         <div className="item-flex">
                             <div className="social">
-                                <ul>
+                                {/* <ul>
                                     <li>
                                         <a href="#"><i className="fab fa-facebook-f"></i></a>
                                     </li>
@@ -37,11 +37,11 @@ export default function TopInfo() {
                                     <li>
                                         <a href="#"><i className="fab fa-linkedin-in"></i></a>
                                     </li>
-                                </ul>
+                                </ul> */}
                             </div>
                             <div className="button">
-                                <a href="#">Register</a>
-                                <a href="#"><i className="fa fa-sign-in-alt"></i>Login</a>
+                                <a href="#"></a>
+                                <a href="https://admin.smkskrian1.com/" target="_blank"><i className="fa fa-sign-in-alt"></i>Login</a>
                             </div>
                         </div>
                     </div>
