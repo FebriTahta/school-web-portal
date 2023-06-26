@@ -1,32 +1,28 @@
 export default function SingleTeamList(props) {
     return(
         <>
-            <div className="single-item col-lg-3 col-md-6">
+            <div className="single-item col-lg-3 col-md-6 col-sm-6 col-6">
                 <div className={props.class}>
                     <div className="item">
                         <div className="thumb">
-                            <img src="/assets/img/800x800.png" alt="Thumb" />
-                            {/* <ul>
+                            <a href={"https://wa.me/"+props.guru_wa}>
+                                <img src={props.guru_image} alt="Thumb" />
+                            </a>
+                            <ul>
                                 <li className="facebook">
-                                    <a href="#0">
-                                        <i className="fab fa-facebook-f"></i>
+                                    <a href={"https://wa.me/"+props.guru_wa} target="_blank" style={{backgroundColor:"green"}}>
+                                        <i className="fab fa-whatsapp"></i>
                                     </a>
                                 </li>
-                                <li className="twitter">
-                                    <a href="#0">
-                                        <i className="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li className="linkedin">
-                                    <a href="#0">
-                                        <i className="fab fa-linkedin-in"></i>
-                                    </a>
-                                </li>
-                            </ul> */}
+                            </ul>
                         </div>
-                        <div className="info">
-                            <h4><a href="#0">{props.nama}</a></h4>
-                            <span>Science specialist</span>
+                        <div className="info" style={{marginBottom:"0"}}>
+                            <div className="nama-guru-all">
+                                <h4 ><a href="#0">{props.guru_name}</a></h4>
+                            </div>
+                            <div className="nama-jabatan-all">
+                                <h4>{props.guru_jabatan}</h4>
+                            </div>
                         </div>
                     </div>
                 </div>

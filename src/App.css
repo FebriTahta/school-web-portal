@@ -90,24 +90,78 @@
   .class-advisor {
     width: 200px !important;
   }
+
+  .btn-2hotnews {
+    width: 100% !important;
+  }
+
+  .image-jurusan-home {
+    object-fit: cover;
+    height: 100px;
+    width: 100%;
+  }
+
+  .nama-jurusan {
+    font-size: 11px;
+  }
+
+  .nama-guru-all {
+    height: 35px !important;
+  }
+  .nama-guru-all h4{
+    font-size: 11px !important;
+    line-height: 15px !important;
+  }
+  .nama-jabatan-all {
+    height: 20px !important;
+  }
+  .nama-jabatan-all h4{
+    font-size: 10px;
+    line-height: 14px;
+  }
+
 }
 
 @media only screen and (min-width: 601px) {
+  /* desktop */
   .recent-news {
       height: 200px !important;
+  }
+  .nama-guru-all {
+    height: 50px !important;
+  }
+  .nama-guru-all h4{
+    font-size: 18px !important;
+  }
+  .nama-jabatan-all {
+    height: 20px !important;
+  }
+  .nama-jabatan-all h4{
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .image-jurusan-home {
+    object-fit: cover;
+    height: 200px;
   }
 }
 
 .slide-item::-webkit-scrollbar {
-  display: none;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  display: none !important;
+}
+
+.slide-item {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;  /* Firefox */
 }
 
 .slide-advisor::-webkit-scrollbar {
-  display: none;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  display: none !important;
+}
+
+.slide-advisor {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;  /* Firefox */
 }
 
 .dropdown:hover .dropdown-menu{

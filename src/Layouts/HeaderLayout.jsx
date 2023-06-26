@@ -48,7 +48,7 @@ const HeaderLayout = () => {
                             <i className="fa fa-bars"></i>
                         </button>
                         <a className="navbar-brand" href="#">
-                            <img src="assets/img/logo.png" className="logo" style={{maxWidth:"180px"}} alt="Logo" />
+                            <img src="/assets/img/logo.png" className="logo" style={{maxWidth:"180px"}} alt="Logo" />
                         </a>
                     </div>
                     {/* End Header Navigation */}
@@ -74,7 +74,7 @@ const HeaderLayout = () => {
                                 })} data-toggle="dropdown" >Informasi</NavLink>
                                 <ul className="dropdown-menu">
                                     <li><a href="#" onClick={()=>navigate('/tentang-kami')}>Tentang SMK 1 Krian</a></li>
-                                    <li><a href="#" onClick={()=>navigate('/daftar-berita')}>Berita</a></li>
+                                    <li><a href="#" onClick={()=>navigate('/daftar-berita')}>Daftar Berita</a></li>
                                     <li><a href="#" onClick={()=>navigate('/daftar-guru')}>Daftar Guru</a></li>
                                 </ul>
                             </li>

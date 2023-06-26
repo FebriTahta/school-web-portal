@@ -21,7 +21,7 @@ export default function Banner(params) {
                 {/* Wrapper for slides */}
                 <div className="carousel-inner carousel-zoom">
                     <div className="carousel-item active">
-                        <div className="slider-thumb bg-cover" style={{backgroundImage:"url(assets/img/ex_1.jpg)"}}></div>
+                        <div className="slider-thumb bg-cover" style={{backgroundImage:"url(/assets/img/ex_1.jpg)"}}></div>
                         <div className="box-table shadow dark" style={{height:"500px"}}>
                             <div className="box-cell">
                                 <div className="container">
@@ -40,7 +40,7 @@ export default function Banner(params) {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="slider-thumb bg-cover" style={{backgroundImage:"url(assets/img/ex_1.jpg)"}}></div>
+                        <div className="slider-thumb bg-cover" style={{backgroundImage:"url(/assets/img/ex_1.jpg)"}}></div>
                         <div className="box-table shadow dark" style={{height:"500px"}}>
                             <div className="box-cell">
                                 <div className="container">

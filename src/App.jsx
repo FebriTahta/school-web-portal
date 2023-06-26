@@ -7,6 +7,7 @@ import TeamList from './Pages/TeamList'
 import Home from './Pages/Home'
 import ScrollToTop from './Components/ScroltoTo'
 import AboutUs from './Pages/AboutUs'
+import DetailNews from './Pages/DetailNews'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path='/daftar-guru' element={<TeamList/>}></Route>
           <Route path='/tentang-kami' element={<AboutUs/>}></Route>
           <Route path='/daftar-berita' element={<NewsList/>}></Route>
+          <Route path='/baca-berita/:slug' element={<DetailNews/>}></Route>
         </Routes>
       </Router>
     </>

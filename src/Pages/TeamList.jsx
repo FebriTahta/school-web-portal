@@ -3,31 +3,42 @@ import FooterLayout from '../Layouts/FooterLayout';
 import TopInfo from '../Components/TopInfo';
 import HeroHeading from '../Components/HeroHeading';
 import SingleTeamList from '../Components/SingleTeamList';
+import {useEffect,useState} from "react"
 
 export default function TeamList() {
-    const nama = "Febri Tahta";
+    const [dataGuru, setGuru] = useState([]);
+    const ApiGuru = "http://127.0.0.1:8000/api/daftar-guru";
+    const guru_image = "http://127.0.0.1:8000/image_guru/";
+
+    const daftarGuru = async () => {
+        try {
+            const data = await fetch(ApiGuru);
+            const response = await data.json();
+            setGuru(response.data);
+
+        }   catch (err) { 
+            console.log(err);
+        }
+    }
+
+    useEffect(()=>{
+        daftarGuru();
+    },[]);
+
     return(
         <>
         <div style={{width:"100%"}}>
             <TopInfo/>
             <HeaderLayout/>
-            <HeroHeading/>
+            <HeroHeading judul={"Daftar Guru"}/>
             <div className="advisor-area default-padding bottom-less" style={{width:"100%"}}>
                 <div className="container">
                     <div className="advisor-items text-center">
                         <div className="row">
-                            <SingleTeamList nama={nama}/>
-                            <SingleTeamList nama={nama}/>
-                            <SingleTeamList nama={nama}/>
-                            <SingleTeamList nama={nama}/>
-                            <SingleTeamList nama={nama}/>
-                            <SingleTeamList nama={nama}/>
-                            <SingleTeamList nama={nama}/>
-                            <SingleTeamList nama={nama}/>
-                            <SingleTeamList nama={nama}/>
-                            <SingleTeamList nama={nama}/>
-                            <SingleTeamList nama={nama}/>
-                            <SingleTeamList nama={nama}/>
+                            {(dataGuru ? dataGuru.map((a,i)=>{
+                                return <SingleTeamList key={i} guru_wa={a.guru_wa} guru_name={a.guru_name} 
+                                guru_image={guru_image+a.guru_image} guru_jabatan={a.guru_jabatan}/>
+                            }):null)}
                         </div>
                     </div>
                 </div>

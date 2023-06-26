@@ -2,34 +2,26 @@ import HeaderLayout from '../Layouts/HeaderLayout';
 import FooterLayout from '../Layouts/FooterLayout';
 import TopInfo from '../Components/TopInfo';
 import HeroHeading from '../Components/HeroHeading';
-import SingleNewsList from '../Components/SingleNewsList';
-import {useEffect,useState} from "react"
-import { NavLink, useNavigate } from "react-router-dom";
+import ReadNews from '../Components/ReadNews';
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function NewsList() {
+export default function DetailNews() {
 
-    const [dataBerita, setdataBerita] = useState([]);
+    const navigate = useNavigate();
+    const { slug } = useParams();
+    const [berita,setBerita] = useState([]);
     const [dataBeritaPopuler, setdataBeritaPopuler] = useState([]);
     const [dataKategori, setKategori] = useState([]);
-    const ApiBerita = "http://127.0.0.1:8000/api/daftar-berita";
     const ApiBeritaPopuler = "http://127.0.0.1:8000/api/berita-populer";
     const ApiKategori = "http://127.0.0.1:8000/api/daftar-kategori";
     const berita_image = "http://127.0.0.1:8000/image_news/";
-    const navigate = useNavigate();
-    
-    const handleGoToDetailNews = (news_slug) => {
-        navigate(`/baca-berita/${news_slug}`);
-    }
 
-    const daftarBerita = async () => {
-        try {
-            const data = await fetch(ApiBerita);
-            const response = await data.json();
-            setdataBerita(response.data);
-
-        }   catch (err) { 
-            console.log(err);
-        }
+    const thisBerita = async (slug) => {
+        const data = await fetch(`http://127.0.0.1:8000/api/baca-berita/${slug}`);
+        const response = await data.json();
+        setBerita(response.data);
     }
 
     const daftarBeritaPopuler = async () => {
@@ -54,11 +46,17 @@ export default function NewsList() {
         }
     }
 
-    useEffect(()=>{
-        daftarBerita();
+    const handleGoToDetailNews = (news_slug) => {
+        navigate(`/baca-berita/${news_slug}`);
+        // console.log(news_slug);
+    }
+
+    useEffect(() => {
+        thisBerita(slug);
         daftarBeritaPopuler();
         daftarKategori();
-    },[]);
+        console.log(slug); 
+    }, [slug]);
 
     return(
         <>
@@ -70,37 +68,8 @@ export default function NewsList() {
                     <div className="blog-items">
                         <div className="row">
                             <div className="blog-content col-lg-8 col-md-12">
-                                <div className="blog-item-box">
-                                    {/* Single Item */}
-                                    <div className="single-item">
-                                        <div className="row">
-                                        {(dataBerita.data ? dataBerita.data.map((a,i)=>{
-                                            return <SingleNewsList key={i} 
-                                            news_title={a.news_title} news_desc={a.news_desc}
-                                            news_tanggal={new Date(a.created_at).getDate()}
-                                            news_bulan={new Date(a.created_at).toLocaleString('default', { month: 'short' })}
-                                            news_tag={a.kategori} 
-                                            news_slug={a.news_slug}
-                                            news_image={berita_image+a.news_image}/>
-                                        }):null)}
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                {/* Pagination */}
-                                {/* <div className="row">
-                                    <div className="col-md-12 pagi-area text-center">
-                                        <nav aria-label="navigation">
-                                            <ul className="pagination">
-                                                <li className="page-item"><a className="page-link" href="#"><i className="fas fa-angle-double-left"></i></a></li>
-                                                <li className="page-item active"><a className="page-link" href="#">1</a></li>
-                                                <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                                <li className="page-item"><a className="page-link" href="#">3</a></li>
-                                                <li className="page-item"><a className="page-link" href="#"><i className="fas fa-angle-double-right"></i></a></li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div> */}
+                                <ReadNews news_image={berita_image+berita.news_image}
+                                news_title={berita.news_title} news_desc={berita.news_desc}/>
                             </div>
                             {/* Start Sidebar */}
                             <div className="sidebar col-lg-4 col-md-12">
@@ -124,7 +93,7 @@ export default function NewsList() {
                                                     <img src={berita_image+a.news_image} style={{objectFit:"cover", height:"110px",borderTopLeftRadius:"10px",borderBottomLeftRadius:"10px"}} alt="Thumb" />
                                                 </div>
                                                 <div className="info">
-                                                    <a href="#" onClick={() => handleGoToDetailNews(a.news_slug)}>{a.news_title.substring(0,80)}...</a>
+                                                    <a href="#judul" onClick={() => handleGoToDetailNews(a.news_slug)}>{a.news_title.substring(0,80)}...</a>
                                                     <div className="meta-title">
                                                         <span className="post-date"><i className="fas fa-clock"></i> 
                                                         {new Date(a.created_at).getDate()} {new Date(a.created_at).toLocaleString('default', { month: 'short' })}, 
