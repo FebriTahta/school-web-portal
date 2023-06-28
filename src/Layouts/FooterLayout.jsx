@@ -1,4 +1,25 @@
+import {useEffect,useState} from "react"
+
 const FooterLayout = () => {
+
+    const [dataJurusan, setJurusan] = useState([]);
+    const ApiJurusan = "http://127.0.0.1:8000/api/preview-jurusan";
+
+    const daftarJurusan = async () => {
+        try {
+            const data = await fetch(ApiJurusan);
+            const response = await data.json();
+            setJurusan(response.data);
+
+        }   catch (err) { 
+            console.log(err);
+        }
+    }
+
+    useEffect(()=>{
+        daftarJurusan();
+    },[]);
+
     return (
        <div style={{width:"100%"}}>
             <footer className="bg-dark text-light">
@@ -39,12 +60,11 @@ const FooterLayout = () => {
                             <div className="f-item link">
                                 <h4 className="widget-title">Jurusan</h4>
                                 <ul>
-                                    <li>
-                                        <a href="#">Teknik Jaringan Komputer</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Rekayasa Perangkat Lunak</a>
-                                    </li>
+                                    {(dataJurusan ? dataJurusan.map((a,i)=>{
+                                        return <li key={i}>
+                                            <a href="#">{a.jurusan_name}</a>
+                                        </li>
+                                    }) :null)}
                                 </ul>
                             </div>
                         </div>
