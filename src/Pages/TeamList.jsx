@@ -7,8 +7,8 @@ import {useEffect,useState} from "react"
 
 export default function TeamList() {
     const [dataGuru, setGuru] = useState([]);
-    const ApiGuru = "http://127.0.0.1:8000/api/daftar-guru";
-    const guru_image = "http://127.0.0.1:8000/image_guru/";
+    const ApiGuru = "https://admin.smkskrian1.com/api/daftar-guru";
+    const guru_image = "https://admin.smkskrian1.com/image_guru/";
 
     const daftarGuru = async () => {
         try {

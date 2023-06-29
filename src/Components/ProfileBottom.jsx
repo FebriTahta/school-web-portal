@@ -3,8 +3,8 @@ import {useEffect,useState} from "react"
 export default function ProfileBottom(params) {
 
     const [dataProfile, setProfile] = useState([]);
-    const ApiProfile = "http://127.0.0.1:8000/api/display-profile";
-    const profile_image = "http://127.0.0.1:8000/profile_image/";
+    const ApiProfile = "https://admin.smkskrian1.com/api/display-profile";
+    const profile_image = "https://admin.smkskrian1.com/profile_image/";
 
     const daftarProfile = async () => {
         try {
@@ -34,7 +34,7 @@ export default function ProfileBottom(params) {
                                         {(dataProfile ? dataProfile.profile_desc : null)}
                                     </p>
                                 </div>
-                                <a className="popup-youtube relative video-play-button" href="https://www.youtube.com/watch?v=8GQTt50izkg">
+                                <a className="popup-youtube relative video-play-button" href={(dataProfile ? dataProfile.profile_video :null)}>
                                     <i className="fa fa-play"></i>
                                 </a>
                             </div>

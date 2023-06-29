@@ -1,4 +1,5 @@
 import {useEffect,useState} from "react"
+import { useNavigate, NavLink } from "react-router-dom"
 
 export default function SlideItem(params) {
 
@@ -11,8 +12,8 @@ export default function SlideItem(params) {
     }
 
     const [previewJurusan, setpreviewJurusan] = useState([]);
-    const ApiJurusan = "http://127.0.0.1:8000/api/preview-jurusan";
-    const jurusan_image = "http://127.0.0.1:8000/image_jurusan/";
+    const ApiJurusan = "https://admin.smkskrian1.com/api/preview-jurusan";
+    const jurusan_image = "https://admin.smkskrian1.com/image_jurusan/";
 
     const daftarpreviewJurusan = async () => {
         try {
@@ -45,7 +46,7 @@ export default function SlideItem(params) {
             <div className="container-full" style={{marginBottom:"20px",right:"0"}}>
                 <button onClick={scrollslideitemleft} style={{backgroundColor:"white",marginRight:"10px",fontSize:"20px",padding:"10px",width:"50px", height:"50px",borderRadius:"50%"}}><i className="fa fa-chevron-left"></i></button>
                 <button onClick={scrollslideitemright} style={{backgroundColor:"white", marginLeft:"10px", marginRight:"20px",fontSize:"20px",padding:"10px",width:"50px",height:"50px",borderRadius:"50%"}}><i className="fa fa-chevron-right"></i></button>
-                <a href="#" className="btn circle btn-theme effect btn-sm" >SEMUA JURUSAN </a>
+                <NavLink to={'/daftar-jurusan'} href="#" className="btn circle btn-theme effect btn-sm" >SEMUA JURUSAN </NavLink>
             </div>
             <div className="container-full slide-item" id="slide-item" style={{display:"flex",justifyContent:"start",overflowX:"auto",scrollBehavior:"smooth",marginBottom:"10px"}}>
                 {(previewJurusan ? previewJurusan.map((a, i)=> {
@@ -56,7 +57,7 @@ export default function SlideItem(params) {
                             <h4><a href="#"  className="nama-jurusan">{a.jurusan_name}</a></h4>
                         </div>
                         <div className="thumb">
-                            <span>PREVIEW</span>
+                            <span>{a.jurusan_anak+" anak "+a.jurusan_kelas+" kelas"}</span>
                             <img src={jurusan_image+a.jurusan_image} className="image-jurusan-home" alt="Thumb" />
                         </div>
                     </div>

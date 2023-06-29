@@ -4,9 +4,9 @@ export default function HotNews(params) {
 
     const [hotNews, sethotNews] = useState([]);
     const [recentNews, setrecentNews] = useState([]);
-    const apihotNews = "http://127.0.0.1:8000/api/hot-news";
-    const apirecentNews = "http://127.0.0.1:8000/api/recent-news";
-    const image_src  = "http://127.0.0.1:8000/image_news/";
+    const apihotNews = "https://admin.smkskrian1.com/api/hot-news";
+    const apirecentNews = "https://admin.smkskrian1.com/api/recent-news";
+    const image_src  = "https://admin.smkskrian1.com/image_news/";
     const navigate = useNavigate();
 
     const handleGoToDetailNews = (news_slug) => {

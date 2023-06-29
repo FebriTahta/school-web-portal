@@ -14,12 +14,12 @@ export default function DetailNews() {
     const [berita,setBerita] = useState([]);
     const [dataBeritaPopuler, setdataBeritaPopuler] = useState([]);
     const [dataKategori, setKategori] = useState([]);
-    const ApiBeritaPopuler = "http://127.0.0.1:8000/api/berita-populer";
-    const ApiKategori = "http://127.0.0.1:8000/api/daftar-kategori";
-    const berita_image = "http://127.0.0.1:8000/image_news/";
+    const ApiBeritaPopuler = "https://admin.smkskrian1.com/api/berita-populer";
+    const ApiKategori = "https://admin.smkskrian1.com/api/daftar-kategori";
+    const berita_image = "https://admin.smkskrian1.com/image_news/";
 
     const thisBerita = async (slug) => {
-        const data = await fetch(`http://127.0.0.1:8000/api/baca-berita/${slug}`);
+        const data = await fetch(`https://admin.smkskrian1.com/api/baca-berita/${slug}`);
         const response = await data.json();
         setBerita(response.data);
     }

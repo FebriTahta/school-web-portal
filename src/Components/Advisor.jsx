@@ -14,8 +14,8 @@ export default function Advisor(params) {
     }
 
     const [previewGuru, setpreviewGuru] = useState([]);
-    const ApiGuru = "http://127.0.0.1:8000/api/preview-guru";
-    const guru_image = "http://127.0.0.1:8000/image_guru/";
+    const ApiGuru = "https://admin.smkskrian1.com/api/preview-guru";
+    const guru_image = "https://admin.smkskrian1.com/image_guru/";
 
     const daftarpreviewGuru = async () => {
         try {

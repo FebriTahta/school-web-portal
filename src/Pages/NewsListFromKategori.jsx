@@ -12,10 +12,10 @@ export default function NewsListFromKategori() {
     const [dataBerita, setdataBerita] = useState([]);
     const [dataBeritaPopuler, setdataBeritaPopuler] = useState([]);
     const [dataKategori, setKategori] = useState([]);
-    const ApiBerita = "http://127.0.0.1:8000/api/daftar-berita?page=1";
-    const ApiBeritaPopuler = "http://127.0.0.1:8000/api/berita-populer";
-    const ApiKategori = "http://127.0.0.1:8000/api/daftar-kategori";
-    const berita_image = "http://127.0.0.1:8000/image_news/";
+    const ApiBerita = "https://admin.smkskrian1.com/api/daftar-berita?page=1";
+    const ApiBeritaPopuler = "https://admin.smkskrian1.com/api/berita-populer";
+    const ApiKategori = "https://admin.smkskrian1.com/api/daftar-kategori";
+    const berita_image = "https://admin.smkskrian1.com/image_news/";
     const { slug } = useParams();
     const navigate = useNavigate();
 
@@ -24,7 +24,7 @@ export default function NewsListFromKategori() {
     }
 
     const thisBeritaFromKategori = async (slug) => {
-        const data = await fetch(`http://127.0.0.1:8000/api/daftar-berita-berdasarkan-kategori/${slug}`);
+        const data = await fetch(`https://admin.smkskrian1.com/api/daftar-berita-berdasarkan-kategori/${slug}`);
         const response = await data.json();
         setdataBerita(response.data);
     }
@@ -63,7 +63,7 @@ export default function NewsListFromKategori() {
     }
 
     const fetchPages = async (currnetPage) => {
-        const response = await fetch(`http://127.0.0.1:8000/api/daftar-berita?page=${currnetPage}`);
+        const response = await fetch(`https://admin.smkskrian1.com/api/daftar-berita?page=${currnetPage}`);
         const data = await response.json();
         return data.data;
     }

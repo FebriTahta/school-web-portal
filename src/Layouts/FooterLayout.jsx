@@ -3,7 +3,7 @@ import {useEffect,useState} from "react"
 const FooterLayout = () => {
 
     const [dataJurusan, setJurusan] = useState([]);
-    const ApiJurusan = "http://127.0.0.1:8000/api/preview-jurusan";
+    const ApiJurusan = "https://admin.smkskrian1.com/api/preview-jurusan";
 
     const daftarJurusan = async () => {
         try {

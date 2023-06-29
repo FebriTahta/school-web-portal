@@ -66,7 +66,7 @@ const HeaderLayout = () => {
                             </li>
                             <li className="dropdown">
                                 <NavLink href="#" className={(()=>{
-                                    if (url == 'daftar-guru' || url == 'daftar-berita' || url == 'tentang-kami') {
+                                    if (url == 'daftar-guru' || url == 'daftar-berita' || url == 'tentang-kami' || url == 'daftar-jurusan') {
                                         return 'dropdown-toggle active'
                                     }else{
                                         return 'dropdown-toggle'
@@ -76,6 +76,7 @@ const HeaderLayout = () => {
                                     {/* <li><a href="#" onClick={()=>navigate('/tentang-kami')}>Tentang SMK 1 Krian</a></li> */}
                                     <li><a href="#" onClick={()=>navigate('/daftar-berita')}>Daftar Berita</a></li>
                                     <li><a href="#" onClick={()=>navigate('/daftar-guru')}>Daftar Guru</a></li>
+                                    <li><a href="#" onClick={()=>navigate('/daftar-jurusan')}>Daftar Jurusan</a></li>
                                 </ul>
                             </li>
                             <li className="dropdown">

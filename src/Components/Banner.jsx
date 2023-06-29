@@ -3,8 +3,8 @@ import {useEffect,useState} from "react"
 export default function Banner(params) {
 
     const [dataBanner, setBanner] = useState([]);
-    const ApiBanner = "http://127.0.0.1:8000/api/display-banner";
-    const banner_image = "http://127.0.0.1:8000/banner_image/";
+    const ApiBanner = "https://admin.smkskrian1.com/api/display-banner";
+    const banner_image = "https://admin.smkskrian1.com/banner_image/";
 
     const daftarBanner = async () => {
         try {
