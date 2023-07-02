@@ -29,7 +29,7 @@ const FooterLayout = () => {
                     <div className="row">
                         <div className="col-lg-4 col-md-6 item">
                             <div className="f-item about">
-                                <img src="/assets/img/logo-light.png" alt="Logo" />
+                                <img src="/assets/logo-text.png" alt="Logo" />
                                 <p>
                                     Sekolah Menengah Kejuruan (SMK) yang mempunyai beberapa jurusan bergengsi dengan para pendidik yang Profesional di Bidangnya
                                 </p>
