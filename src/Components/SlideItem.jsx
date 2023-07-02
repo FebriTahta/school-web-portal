@@ -52,7 +52,7 @@ export default function SlideItem(params) {
                 {(previewJurusan ? previewJurusan.map((a, i)=> {
                     return <div key={i} style={{paddingRight:"30px"}}>
                     <div className="item item-mobile" style={{width:"330px"}}>
-                        <div className="title">
+                        <div className="title nama-jurusan">
                             <i className="flaticon-innovation"></i>
                             <h4><a href="#"  className="nama-jurusan">{a.jurusan_name}</a></h4>
                         </div>

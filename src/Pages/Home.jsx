@@ -8,6 +8,7 @@ import Promo from '../Components/Promo'
 import Total from '../Components/Total'
 import Advisor from '../Components/Advisor'
 import ProfileBottom from '../Components/ProfileBottom'
+import PrevKrsiswaan from '../Components/PrevKesiswaan'
 
 export default function Home(params) {
     return(
@@ -18,6 +19,7 @@ export default function Home(params) {
             <HotNews/>
             <SlideItem/>
             <Promo/>
+            <PrevKrsiswaan/>
             <Total/>
             <Advisor/>
             <ProfileBottom/>

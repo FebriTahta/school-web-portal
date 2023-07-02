@@ -3,7 +3,7 @@ import FooterLayout from "../Layouts/FooterLayout";
 export default function ReadNews(props) {
     return (
         <>
-            <div className="item">
+            <div className="item"> 
 
                 <div className="blog-item-box">
                     {/* Start Post Thumb */}
@@ -15,7 +15,7 @@ export default function ReadNews(props) {
                     <div className="content">
                         <div className="top-info">
                             <ul>
-                                <li>
+                                <li className="logosmk">
                                     <a href="#"><img src="/assets/logo-smk.png" alt="Author" />SMK 1 Krian</a>
                                 </li>
                                 <li>
@@ -24,7 +24,7 @@ export default function ReadNews(props) {
                             </ul>
                         </div>
                         <h3>{props.news_title}</h3>
-                        <div
+                        <div className="text-desc" style={{textAlign:"left"}}
                             dangerouslySetInnerHTML={{ __html: props.news_desc }}
                         />
                     </div>

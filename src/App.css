@@ -48,6 +48,7 @@
 }
 
 @media only screen and (max-width: 600px) {
+  /* mobile */
   .recent-news {
       height: 150px !important;
   }
@@ -73,7 +74,11 @@
   }
 
   .item-mobile h4 {
-    font-size: 12px !important;
+    line-height: 12px;
+  }
+
+  .item-mobile h4 a {
+    font-size: 10px !important;
   }
 
   .item-mobile .thumb {
@@ -120,6 +125,30 @@
     line-height: 14px;
   }
 
+  #kesiswaan-ke-2 {
+    display: none !important;
+  }
+
+  #kesiswaan-ke-1 {
+    display: none !important;
+  }
+
+  .content h3 {
+    font-size: 16px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .logosmk {
+    display: none !important;
+  }
+
+  .text-desc {
+    line-height: 20px !important;
+  }
+
+  .hide-dokumen {
+    display: none !important;
+  }
 }
 
 @media only screen and (min-width: 601px) {
