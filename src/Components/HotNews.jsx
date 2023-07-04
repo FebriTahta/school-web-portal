@@ -63,7 +63,7 @@ export default function HotNews(params) {
                                 return <div className="single-item col-lg-6" key={i}>
                                     <div className="item">
                                         <div className="thumb">
-                                            <img src={image_src+a.news_image} alt="Thumb"/>
+                                            <img src={image_src+a.news_image} style={{objectFit:"cover",width:"100%", height:"320px"}} alt="Thumb"/>
                                         </div>
                                         <div className="info">
                                             <div className="content">

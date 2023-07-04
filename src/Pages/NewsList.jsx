@@ -100,7 +100,7 @@ export default function NewsList() {
                     <div className="blog-items">
                         <div className="row">
                             <div className="blog-content col-lg-8 col-md-12">
-                                <div className="blog-item-box">
+                                <div className="blog-item-box"> 
                                     {/* Single Item */}
                                     <div className="single-item">
                                         <div className="row">

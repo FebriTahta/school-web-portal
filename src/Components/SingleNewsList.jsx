@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-
+import {useEffect,useState} from "react"
 export default function SingleNewsList(props){
     
     const navigate = useNavigate();
@@ -8,6 +8,10 @@ export default function SingleNewsList(props){
         navigate(`/baca-berita/${news_slug}`);
         // console.log(news_slug);
     }
+
+    useEffect(()=>{
+        // console.log(props);
+    },[]);
 
     return(
         <>
