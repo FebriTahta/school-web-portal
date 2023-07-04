@@ -106,7 +106,7 @@ export default function DaftarPrestasi() {
                                             <div className="thumb">
                                                 <a href="#" onClick={() => handleGoToDetailNews(a.news_slug)}><img src={berita_image+a.news_image} alt="Thumb" style={{objectFit:"cover", width:"100%", height:"250px"}}/></a>
                                                 <div className="date">
-                                                    <strong>18 </strong> Aug
+                                                    <strong>{new Date(a.created_at).getDate()} </strong> {new Date(a.created_at).toLocaleString('default', { month: 'short' })}
                                                 </div>
                                             </div>
                                             <div className="content">
