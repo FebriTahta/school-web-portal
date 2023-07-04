@@ -5,7 +5,7 @@ import HeroHeading from '../Components/HeroHeading';
 import {useEffect,useState} from "react"
 import { NavLink, useNavigate } from "react-router-dom";
 
-export default function DaftarPrestasi(params) {
+export default function DaftarPrestasi() {
     const [dataBerita, setdataBerita] = useState([]);
     const [dataBeritaPopuler, setdataBeritaPopuler] = useState([]);
     const [dataKategori, setKategori] = useState([]);
@@ -101,23 +101,23 @@ export default function DaftarPrestasi(params) {
                             <div className="row">
                                 {/* Single Item */}
                                 {(dataBerita.data? dataBerita.data.map((a,i)=>{
-                                    return <div className="col-lg-4 col-md-6 single-item">
+                                    return <div className="col-lg-4 col-md-6 single-item" key={i}>
                                         <div className="item">
                                             <div className="thumb">
-                                                <a href="#"><img src="/assets/img/800x600.png" alt="Thumb" /></a>
+                                                <a href="#" onClick={() => handleGoToDetailNews(a.news_slug)}><img src={berita_image+a.news_image} alt="Thumb" style={{objectFit:"cover", width:"100%", height:"250px"}}/></a>
                                                 <div className="date">
                                                     <strong>18 </strong> Aug
                                                 </div>
                                             </div>
                                             <div className="content">
-                                                <h4><a href="blog-single-right-sidebar.html">Parish any chatty can elinor direct for former.</a></h4>
+                                                <h4><a href="blog-single-right-sidebar.html">{a.news_title.substring(0,30)}..</a></h4>
                                                 <p>
-                                                    Arndlord packages overcame distance smallest in recurred. Wrong maids or be asked Household. 
+                                                {a.news_desc.replace(/(<([^>]+)>)/gi, "").substring(0,110)}...
                                                 </p>
                                             </div>
                                             <div className="bottom-info">
-                                                <span><i className="fas fa-user"></i> Jones Alex</span>
-                                                <a className="btn-more" href="#">Read More <i className="arrow_right"></i></a>
+                                                <span><i className="fas fa-user"></i> SMK 1 KRIAN</span>
+                                                <a className="btn-more" onClick={() => handleGoToDetailNews(a.news_slug)} href="#">Read More <i className="arrow_right"></i></a>
                                             </div>
                                         </div>
                                     </div>

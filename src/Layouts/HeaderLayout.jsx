@@ -108,13 +108,13 @@ const HeaderLayout = () => {
                                 </ul>
                             </li>
                             <li className="dropdown">
-                                <a href="#" data-toggle="dropdown"  className={(()=>{
+                                <NavLink href="#" data-toggle="dropdown"  className={(()=>{
                                     if (url == 'contact' || url == 'contact') {
                                         return 'dropdown-toggle active'
                                     }else{
                                         return 'dropdown-toggle'
                                     }
-                                })} >Contact</a>
+                                })} >Contact</NavLink>
                                 <ul className="dropdown-menu">
                                     <li><a href="#" onClick={()=>navigate('/contact')}>Contact</a></li>
                                     <li><a href="http://smkkrian1.sch.id/" target='_blank'>Old Website</a></li>
