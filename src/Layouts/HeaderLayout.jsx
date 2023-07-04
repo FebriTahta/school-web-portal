@@ -47,9 +47,9 @@ const HeaderLayout = () => {
                         <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i className="fa fa-bars"></i>
                         </button>
-                        <a className="navbar-brand" href="#">
+                        <NavLink to={'/'} lassName="navbar-brand" href="#">
                             <img src="/assets/logo-text.png" className="logo" style={{maxWidth:"180px"}} alt="Logo" />
-                        </a>
+                        </NavLink>
                     </div>
                     {/* End Header Navigation */}
 
