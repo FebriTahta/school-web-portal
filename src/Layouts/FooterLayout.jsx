@@ -75,13 +75,13 @@ const FooterLayout = () => {
                                 <div className="opening-info">
                                     <h5>Opening Hours</h5>
                                     <ul>
-                                        <li> <span> Mon - Tues :  </span>
-                                        <div className="float-right"> 6.00 am - 10.00 pm </div>
+                                        <li> <span> Senin - Jumat :  </span>
+                                        <div className="float-right"> 07.00 am - 16.00 pm </div>
                                         </li>
-                                        <li> <span> Wednes - Thurs :</span>
-                                        <div className="float-right"> 8.00 am - 6.00 pm </div>
+                                        <li> <span> Sabtu :</span>
+                                        <div className="float-right"> 07.00 am - 12.00 pm </div>
                                         </li>
-                                        <li> <span> Sun : </span>
+                                        <li> <span> Minggu : </span>
                                         <div className="float-right closed"> Closed </div>
                                         </li>
                                     </ul>

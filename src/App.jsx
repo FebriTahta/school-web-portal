@@ -12,6 +12,8 @@ import NewsListFromKategori from './Pages/NewsListFromKategori'
 import Jurusan from './Pages/Jurusan'
 import DaftarKesiswaan from './Pages/DaftarKesiswaan'
 import DetailKesiswaan from './Pages/DetailKesiswaan'
+import Contact from './Pages/Contact'
+import DaftarPrestasi from './Pages/DaftarPrestasi'
 
 function App() {
 
@@ -29,6 +31,8 @@ function App() {
           <Route path='/daftar-berita-berdasarkan-kategori/:slug' element={<NewsListFromKategori/>} ></Route>
           <Route path='/daftar-kesiswaan' element={<DaftarKesiswaan/>}></Route>
           <Route path='/detail-kesiswaan/:slug' element={<DetailKesiswaan/>}></Route>
+          <Route path='/contact' element={<Contact/>}></Route>
+          <Route path='/daftar-prestasi' element={<DaftarPrestasi/>}></Route>
         </Routes>
       </Router>
     </>

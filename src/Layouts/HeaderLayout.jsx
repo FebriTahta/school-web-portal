@@ -77,6 +77,9 @@ const HeaderLayout = () => {
                                     <li><a href="#" onClick={()=>navigate('/daftar-berita')}>Daftar Berita</a></li>
                                     <li><a href="#" onClick={()=>navigate('/daftar-guru')}>Daftar Guru</a></li>
                                     <li><a href="#" onClick={()=>navigate('/daftar-jurusan')}>Daftar Jurusan</a></li>
+                                    <li><a href="#" onClick={()=>navigate('/daftar-prestasi')}>Daftar Prestasi</a></li>
+                                    <li><a href="#" onClick={()=>navigate('/daftar-program-unggulan')}>Daftar Program Unggulan</a></li>
+
                                 </ul>
                             </li>
                             <li className="dropdown">
@@ -104,14 +107,18 @@ const HeaderLayout = () => {
                                     <li><a href="#">--</a></li>
                                 </ul>
                             </li>
-                            {/* <li className="dropdown">
-                                <a href="#" className="dropdown-toggle" data-toggle="dropdown" >PPDB</a>
+                            <li className="dropdown">
+                                <a href="#" data-toggle="dropdown"  className={(()=>{
+                                    if (url == 'contact' || url == 'contact') {
+                                        return 'dropdown-toggle active'
+                                    }else{
+                                        return 'dropdown-toggle'
+                                    }
+                                })} >Contact</a>
                                 <ul className="dropdown-menu">
-                                    <li><a href="#">Pendaftaran Siswa Baru</a></li>
+                                    <li><a href="#" onClick={()=>navigate('/contact')}>Contact</a></li>
+                                    <li><a href="http://smkkrian1.sch.id/" target='_blank'>Old Website</a></li>
                                 </ul>
-                            </li> */}
-                            <li>
-                                <a href="contact.html">Contact</a>
                             </li>
                         </ul>
                     </div>{/* /.navbar-collapse */}
