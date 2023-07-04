@@ -84,8 +84,8 @@ export default function DaftarPrestasi() {
 
     useEffect(()=>{
         daftarBerita();
-        daftarBeritaPopuler();
-        daftarKategori();
+        // daftarBeritaPopuler();
+        // daftarKategori();
         console.log(dataBerita.data); 
     },[]);
 
@@ -127,19 +127,20 @@ export default function DaftarPrestasi() {
                             </div>
                             
                             {/* Pagination */}
-                            <div className="row">
-                                <div className="col-md-12 pagi-area text-center">
-                                    <nav aria-label="navigation">
-                                        <ul className="pagination">
-                                            <li className="page-item"><a className="page-link" href="#"><i className="fas fa-angle-double-left"></i></a></li>
-                                            <li className="page-item active"><a className="page-link" href="#">1</a></li>
-                                            <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                            <li className="page-item"><a className="page-link" href="#">3</a></li>
-                                            <li className="page-item"><a className="page-link" href="#"><i className="fas fa-angle-double-right"></i></a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
+                            {
+                                last > 1 ? <div className="row">
+                                    <div className="col-md-12 pagi-area text-center">
+                                        <nav aria-label="navigation">
+                                            <ul className="pagination">
+                                                {prev && <li className="page-item"><a className="page-link" href="#" onClick={() => onPageChange(dataBerita.current_page - 1)}><i className="fas fa-angle-double-left"></i></a></li>}
+                                                <li className="page-item active"><a className="page-link" href="#">{dataBerita.current_page}</a></li>
+                                                <li className="page-item"><a className="page-link" href="#">{dataBerita.current_page + 1}</a></li>
+                                                {next && <li className="page-item"><a className="page-link" href="#" onClick={() => onPageChange(dataBerita.current_page + 1)}><i className="fas fa-angle-double-right"></i></a></li>}
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div> : null
+                            }
                         </div>
                     </div>
                 </div>
