@@ -120,6 +120,18 @@ const HeaderLayout = () => {
                                     <li><a href="http://smkkrian1.sch.id/" target='_blank'>Old Website</a></li>
                                 </ul>
                             </li>
+                            <li className="dropdown">
+                                <NavLink href="#" data-toggle="dropdown"  className={(()=>{
+                                    if (url == 'informasi-ppdb') {
+                                        return 'dropdown-toggle active'
+                                    }else{
+                                        return 'dropdown-toggle'
+                                    }
+                                })} >PPDB</NavLink>
+                                <ul className="dropdown-menu">
+                                    <li><a href="#" onClick={()=>navigate('/informasi-ppdb')}>Informasi PPDB</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>{/* /.navbar-collapse */}
                 </div>

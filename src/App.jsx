@@ -14,6 +14,9 @@ import DaftarKesiswaan from './Pages/DaftarKesiswaan'
 import DetailKesiswaan from './Pages/DetailKesiswaan'
 import Contact from './Pages/Contact'
 import DaftarPrestasi from './Pages/DaftarPrestasi'
+import ProgramUnggulan from './Pages/ProgramList'
+import InfoPPDB from './Pages/InfoPPDB'
+import DetailPPDB from './Pages/DetailPPDB'
 
 function App() {
 
@@ -33,6 +36,9 @@ function App() {
           <Route path='/detail-kesiswaan/:slug' element={<DetailKesiswaan/>}></Route>
           <Route path='/contact' element={<Contact/>}></Route>
           <Route path='/daftar-prestasi' element={<DaftarPrestasi/>}></Route>
+          <Route path='/daftar-program-unggulan' element={<ProgramUnggulan/>}></Route>
+          <Route path='/informasi-ppdb' element={<InfoPPDB/>}></Route>
+          <Route path='/detail-ppdb' element={<DetailPPDB/>}></Route>
         </Routes>
       </Router>
     </>

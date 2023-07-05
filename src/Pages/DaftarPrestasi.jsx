@@ -53,7 +53,7 @@ export default function DaftarPrestasi() {
     }
 
     const fetchPages = async (currnetPage) => {
-        const response = await fetch(`https://admin.smkskrian1.com/api/daftar-berita?page=${currnetPage}`);
+        const response = await fetch(`https://admin.smkskrian1.com/api/daftar-prestasi?page=${currnetPage}`);
         const data = await response.json();
         return data.data;
     }
