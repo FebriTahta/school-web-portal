@@ -47,7 +47,7 @@ const HeaderLayout = () => {
                         <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i className="fa fa-bars"></i>
                         </button>
-                        <NavLink to={'/'} lassName="navbar-brand" href="#">
+                        <NavLink to={'/'} className="navbar-brand" href="#">
                             <img src="/assets/logo-text.png" className="logo" style={{maxWidth:"180px"}} alt="Logo" />
                         </NavLink>
                     </div>
@@ -88,13 +88,13 @@ const HeaderLayout = () => {
                                     <li><NavLink href="#" to={'/daftar-kesiswaan'}>Informasi Kesiswaan</NavLink></li>
                                 </ul>
                             </li>
-                            <li className="dropdown">
+                            {/* <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" >Pembayaran</a>
                                 <ul className="dropdown-menu">
                                     <li><a href="#">Informasi Pembayaran</a></li>
                                     <li><a href="#">Cek Pembayaran</a></li>
                                 </ul>
-                            </li>
+                            </li> */}
                             {/* <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" >Mitra</a>
                                 <ul className="dropdown-menu">

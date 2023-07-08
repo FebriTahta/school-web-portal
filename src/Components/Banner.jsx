@@ -1,20 +1,33 @@
 import {useEffect,useState} from "react"
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+import { NavLink, useNavigate } from "react-router-dom"
 
 export default function Banner(params) {
 
     const [dataBanner, setBanner] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     const ApiBanner = "https://admin.smkskrian1.com/api/display-banner";
-    const banner_image = "https://admin.smkskrian1.com/banner_image/";
+    const banner_image = "https://admin.smkskrian1.com/news_image/";
+
+    const navigate = useNavigate();
+    
+    const handleGoToDetailNews = (news_slug) => {
+        navigate(`/baca-berita/${news_slug}`);
+    }
 
     const daftarBanner = async () => {
+        setIsLoading(true);
         try {
             const data = await fetch(ApiBanner);
             const response = await data.json();
             setBanner(response.data);
+            console.log(response.data);
 
         }   catch (err) { 
             console.log(err);
         }
+        setIsLoading(false);
     }
 
     useEffect(()=>{
@@ -27,6 +40,10 @@ export default function Banner(params) {
             <div id="bootcarousel" className="carousel text-light slide carousel-fade animate_text" data-ride="carousel">
 
                 {/* Indicators for slides */}
+
+                {/* {isLoading ? (<Skeleton/>) : (
+                    
+                )} */}
                 <div className="carousel-indicator">
                     <div className="container">
                         <div className="row">
@@ -39,62 +56,77 @@ export default function Banner(params) {
                         </div>
                     </div>
                 </div>
+                
 
                 {/* Wrapper for slides */}
                 <div className="carousel-inner carousel-zoom">
-                    {(dataBanner ? dataBanner.map((a,i)=>{
-                        return <div className="carousel-item active" key={i}>
-                            <div className="slider-thumb bg-cover" style={{backgroundImage:"url("+banner_image+a.banner_image+")"}}></div>
-                            <div className="box-table shadow dark" style={{height:"500px"}}>
-                                <div className="box-cell">
-                                    <div className="container">
-                                        <div className="row">
-                                            <div className="col-lg-9">
-                                                <div className="content">
-                                                    <h2 data-animation="animated fadeInRight">SMK 1 Krian Sidoarjo<strong>{a.banner_name}</strong></h2>
+                    {isLoading ? (
+                        <Skeleton height={200}/>
+                        ) : (dataBanner ? dataBanner.map((a,i)=>{
+                        if (i == 1) {
+                            return <div 
+                            className="carousel-item active" 
+                            key={i}>
+                                <div className="slider-thumb bg-cover" style={{backgroundImage:"url("+banner_image+a.news_image+")"}}></div>
+                                <div className="box-table shadow dark" style={{height:"500px"}}>
+                                    <div className="box-cell">
+                                        <div className="container">
+                                            <div className="row">
+                                                <div className="col-lg-9">
+                                                    <div className="content">
+                                                        <h2 data-animation="animated fadeInRight"><strong style={{fontSize:"50px"}}>{a.news_title}</strong></h2>
+                                                    </div>
                                                     <p data-animation="animated slideInLeft">
-                                                        {a.banner_desc}
+                                                        {a.news_desc.replace(/(<([^>]+)>)/gi, "").substring(0,200)}...
                                                     </p>
+                                                    <a onClick={() => handleGoToDetailNews(a.news_slug)} data-animation="animated fadeInUp" class="btn btn-sm btn-gradient" href="#">Read More</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    }):null)}
-                    
-                    {/* <div className="carousel-item">
-                        <div className="slider-thumb bg-cover" style={{backgroundImage:"url(/assets/img/ex_1.jpg)"}}></div>
-                        <div className="box-table shadow dark" style={{height:"500px"}}>
-                            <div className="box-cell">
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-lg-9">
-                                            <div className="content">
-                                                <h2 data-animation="animated fadeInRight">Our Goal is <strong>Achiving Success</strong></h2>
-                                                <p data-animation="animated slideInLeft">
-                                                    Offered chiefly farther of my no colonel shyness. Such on help ye some door if in. Laughter proposal laughing any son law consider. 
-                                                </p>
+                        }else{
+                            return <div 
+                            className="carousel-item" 
+                            key={i}>
+                                <div className="slider-thumb bg-cover" style={{backgroundImage:"url("+banner_image+a.news_image+")"}}></div>
+                                <div className="box-table shadow dark" style={{height:"500px"}}>
+                                    <div className="box-cell">
+                                        <div className="container">
+                                            <div className="row">
+                                                <div className="col-lg-9">
+                                                    <div className="content">
+                                                    <h2 data-animation="animated fadeInRight"><strong style={{fontSize:"50px"}}>{a.news_title}</strong></h2>
+                                                    </div>
+                                                    <p data-animation="animated slideInLeft">
+                                                        {a.news_desc.replace(/(<([^>]+)>)/gi, "").substring(0,200)}...
+                                                    </p>
+                                                    <a onClick={() => handleGoToDetailNews(a.news_slug)} data-animation="animated fadeInUp" class="btn btn-sm btn-gradient"  href="#">Read More</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div> */}
+                        }
+                        
+                    }):null)}
                 </div>
                 {/* End Wrapper for slides */}
 
                 {/* Left and right controls */}
-                <a className="left carousel-control light" href="#bootcarousel" data-slide="prev">
-                    <i className="ti-angle-left"></i>
-                    <span className="sr-only">Previous</span>
-                </a>
-                <a className="right carousel-control light" href="#bootcarousel" data-slide="next">
-                    <i className="ti-angle-right"></i>
-                    <span className="sr-only">Next</span>
-                </a>
+                <div style={{marginTop:"20px"}}>
+                    <a className="left carousel-control light" href="#bootcarousel" data-slide="prev">
+                        <i className="ti-angle-left"></i>
+                        <span className="sr-only">Previous</span>
+                    </a>
+                    <a className="right carousel-control light" href="#bootcarousel" data-slide="next">
+                        <i className="ti-angle-right"></i>
+                        <span className="sr-only">Next</span>
+                    </a>
+                </div>
+                
 
             </div>
             
