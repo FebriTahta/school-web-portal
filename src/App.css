@@ -53,6 +53,10 @@
       height: 150px !important;
   }
 
+  .title-banner{
+     font-size: 25px !important;
+  }
+
   .text {
       font-size: 12px;
       line-height: 16px;

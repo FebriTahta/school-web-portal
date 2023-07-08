@@ -1,19 +1,19 @@
 export default function TopInfo() {
     return(
         <>
-        <div className="top-bar-area bg-dark text-light inline inc-border">
+        <div className="top-bar-area bg-white text-light inline inc-border">
             <div className="container-full">
                 <div className="row align-center">
                     
                     <div className="col-lg-7 col-md-12 left-info">
                         <div className="item-flex">
-                            <ul className="list">
-                                <li>
+                            <ul className="list" >
+                                <li style={{color:"black"}}>
                                     <i className="fas fa-phone"></i> Have any question? (031) 8971207
                                 </li>
-                                <li>
+                                {/* <li style={{color:"black"}}>
                                     <i className="fas fa-bullhorn"></i> <a href="#">Sepak Karir Alumni</a>
-                                </li>
+                                </li> */}
                                 {/* <li>
                                     <i className="fas fa-briefcase"></i> <a href="#"></a>
                                 </li> */}

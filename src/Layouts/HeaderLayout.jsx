@@ -27,12 +27,12 @@ const HeaderLayout = () => {
         <>
             <header id="home" >
             {/* Start Navigation */}
-            <nav style={{width:"100%"}} className="navbar navbar-default attr-border dark bootsnav" id='navbar' ref={stickyHeader}>
+            <nav style={{width:"100%",backgroundColor:"#FF1949"}} className="navbar navbar-default attr-border dark bootsnav" id='navbar' ref={stickyHeader}>
 
                 <div className="container-full">
 
                     {/* Start Atribute Navigation */}
-                    <div className="attr-nav">
+                    <div className="attr-nav" >
                         <form action="#">
                             <input type="text" placeholder="Search" className="form-control" name="text" />
                             <button type="submit">
@@ -58,7 +58,7 @@ const HeaderLayout = () => {
                         <ul className="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                             <li>
                                 {/* <a href="#" onClick={()=>navigate('/')} className="active">Home</a> */}
-                                <NavLink to='/' className={({isActive})=>{
+                                <NavLink to='/' style={{color:"white"}} className={({isActive})=>{
                                     return (
                                         (!isActive ? '' : 'active')
                                     )
@@ -71,7 +71,7 @@ const HeaderLayout = () => {
                                     }else{
                                         return 'dropdown-toggle'
                                     }
-                                })} data-toggle="dropdown" >Informasi</NavLink>
+                                })} data-toggle="dropdown" style={{color:"white"}}>Informasi</NavLink>
                                 <ul className="dropdown-menu">
                                     {/* <li><a href="#" onClick={()=>navigate('/tentang-kami')}>Tentang SMK 1 Krian</a></li> */}
                                     <li><a href="#" onClick={()=>navigate('/daftar-berita')}>Daftar Berita</a></li>
@@ -83,7 +83,7 @@ const HeaderLayout = () => {
                                 </ul>
                             </li>
                             <li className="dropdown">
-                                <a href="#" className="dropdown-toggle" data-toggle="dropdown" >Kesiswaan</a>
+                                <a href="#" style={{color:"white"}} className="dropdown-toggle" data-toggle="dropdown" >Kesiswaan</a>
                                 <ul className="dropdown-menu">
                                     <li><NavLink href="#" to={'/daftar-kesiswaan'}>Informasi Kesiswaan</NavLink></li>
                                 </ul>
@@ -102,13 +102,13 @@ const HeaderLayout = () => {
                                 </ul>
                             </li> */}
                             <li className="dropdown">
-                                <a href="#" className="dropdown-toggle" data-toggle="dropdown" >Alumni</a>
+                                <a href="#" style={{color:"white"}} className="dropdown-toggle" data-toggle="dropdown" >Alumni</a>
                                 <ul className="dropdown-menu">
                                     <li><a href="#">--</a></li>
                                 </ul>
                             </li>
                             <li className="dropdown">
-                                <NavLink href="#" data-toggle="dropdown"  className={(()=>{
+                                <NavLink style={{color:"white"}} href="#" data-toggle="dropdown"  className={(()=>{
                                     if (url == 'contact' || url == 'contact') {
                                         return 'dropdown-toggle active'
                                     }else{
@@ -121,7 +121,7 @@ const HeaderLayout = () => {
                                 </ul>
                             </li>
                             <li className="dropdown">
-                                <NavLink href="#" data-toggle="dropdown"  className={(()=>{
+                                <NavLink style={{color:"white"}} href="#" data-toggle="dropdown"  className={(()=>{
                                     if (url == 'informasi-ppdb') {
                                         return 'dropdown-toggle active'
                                     }else{
@@ -129,7 +129,7 @@ const HeaderLayout = () => {
                                     }
                                 })} >PPDB</NavLink>
                                 <ul className="dropdown-menu">
-                                    <li><a href="#" onClick={()=>navigate('/informasi-ppdb')}>Informasi PPDB</a></li>
+                                    <li><a  href="#" onClick={()=>navigate('/informasi-ppdb')}>Informasi PPDB</a></li>
                                 </ul>
                             </li>
                         </ul>

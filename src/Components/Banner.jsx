@@ -74,12 +74,12 @@ export default function Banner(params) {
                                             <div className="row">
                                                 <div className="col-lg-9">
                                                     <div className="content">
-                                                        <h2 data-animation="animated fadeInRight"><strong style={{fontSize:"50px"}}>{a.news_title}</strong></h2>
+                                                        <h2 data-animation="animated fadeInRight"><strong className="title-banner" style={{fontSize:"50px"}}>{a.news_title.substring(0,30)}..</strong></h2>
+                                                        <p data-animation="animated slideInLeft" style={{lineHeight:"25px"}}>
+                                                            {a.news_desc.replace(/(<([^>]+)>)/gi, "").substring(0,150)}...
+                                                        </p>
+                                                        <a onClick={() => handleGoToDetailNews(a.news_slug)} data-animation="animated fadeInUp" className="btn btn-sm btn-gradient" href="#">Read More</a>
                                                     </div>
-                                                    <p data-animation="animated slideInLeft">
-                                                        {a.news_desc.replace(/(<([^>]+)>)/gi, "").substring(0,200)}...
-                                                    </p>
-                                                    <a onClick={() => handleGoToDetailNews(a.news_slug)} data-animation="animated fadeInUp" class="btn btn-sm btn-gradient" href="#">Read More</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -97,12 +97,12 @@ export default function Banner(params) {
                                             <div className="row">
                                                 <div className="col-lg-9">
                                                     <div className="content">
-                                                    <h2 data-animation="animated fadeInRight"><strong style={{fontSize:"50px"}}>{a.news_title}</strong></h2>
+                                                    <h2 data-animation="animated fadeInRight"><strong className="title-banner" style={{fontSize:"50px"}}>{a.news_title.substring(0,30)}..</strong></h2>
+                                                    <p data-animation="animated slideInLeft" style={{lineHeight:"25px"}}>
+                                                            {a.news_desc.replace(/(<([^>]+)>)/gi, "").substring(0,150)}...
+                                                        </p>
+                                                        <a onClick={() => handleGoToDetailNews(a.news_slug)} data-animation="animated fadeInUp" className="btn btn-sm btn-gradient" href="#">Read More</a>
                                                     </div>
-                                                    <p data-animation="animated slideInLeft">
-                                                        {a.news_desc.replace(/(<([^>]+)>)/gi, "").substring(0,200)}...
-                                                    </p>
-                                                    <a onClick={() => handleGoToDetailNews(a.news_slug)} data-animation="animated fadeInUp" class="btn btn-sm btn-gradient"  href="#">Read More</a>
                                                 </div>
                                             </div>
                                         </div>
