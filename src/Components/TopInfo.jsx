@@ -4,13 +4,14 @@ export default function TopInfo() {
         <div className="top-bar-area bg-white text-light inline inc-border">
             <div className="container-full">
                 <div className="row align-center">
-                    
+                
                     <div className="col-lg-7 col-md-12 left-info">
                         <div className="item-flex">
+                        <img src="/assets/logo-smk.png" className="logo" style={{maxWidth:"200px", position:"absolute", height:"210px", zIndex:"999", marginTop:"100px"}} alt="Logo" />
                             <ul className="list" >
-                                <li style={{color:"black"}}>
+                                {/* <li style={{color:"black"}}>
                                     <i className="fas fa-phone"></i> Have any question? (031) 8971207
-                                </li>
+                                </li> */}
                                 {/* <li style={{color:"black"}}>
                                     <i className="fas fa-bullhorn"></i> <a href="#">Sepak Karir Alumni</a>
                                 </li> */}
@@ -24,8 +25,8 @@ export default function TopInfo() {
                     <div className="col-lg-5 col-md-12 right-info">
                         <div className="item-flex">
                             <div className="social">
-                                {/* <ul>
-                                    <li>
+                                <ul>
+                                    {/* <li>
                                         <a href="#"><i className="fab fa-facebook-f"></i></a>
                                     </li>
                                     <li>
@@ -33,11 +34,11 @@ export default function TopInfo() {
                                     </li>
                                     <li>
                                         <a href="#"><i className="fab fa-pinterest-p"></i></a>
+                                    </li> */}
+                                    <li >
+                                        <i className="fas fa-phone" style={{color:"#FF1949"}}> </i> <span style={{color:"black"}}> Have any question? (031) 8971207</span>
                                     </li>
-                                    <li>
-                                        <a href="#"><i className="fab fa-linkedin-in"></i></a>
-                                    </li>
-                                </ul> */}
+                                </ul>
                             </div>
                             <div className="button">
                                 <a href="#"></a>

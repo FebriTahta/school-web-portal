@@ -158,7 +158,11 @@
 @media only screen and (min-width: 601px) {
   /* desktop */
   .recent-news {
-      height: 200px !important;
+      height: 240px !important;
+  }
+  .logo-desktop {
+    max-width: 120px;
+    height: 45px !important;
   }
   .nama-guru-all {
     height: 50px !important;

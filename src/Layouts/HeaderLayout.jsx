@@ -44,19 +44,19 @@ const HeaderLayout = () => {
 
                     {/* Start Header Navigation */}
                     <div className="navbar-header">
-                        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <button style={{color:"white"}} type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i className="fa fa-bars"></i>
                         </button>
                         <NavLink to={'/'} className="navbar-brand" href="#">
-                            <img src="/assets/logo-text.png" className="logo" style={{maxWidth:"180px"}} alt="Logo" />
+                            <img src="/assets/logo-putih.png" className="logo logo-desktop" style={{marginLeft:"20px"}} alt="Logo" />
                         </NavLink>
                     </div>
                     {/* End Header Navigation */}
 
                     {/* Collect the nav links, forms, and other content for toggling */}
                     <div className="collapse navbar-collapse" id="navbar-menu">
-                        <ul className="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li>
+                        <ul className="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp" style={{backgroundColor:"#FF1949"}}>
+                            <li style={{backgroundColor:"#FF1949"}}>
                                 {/* <a href="#" onClick={()=>navigate('/')} className="active">Home</a> */}
                                 <NavLink to='/' style={{color:"white"}} className={({isActive})=>{
                                     return (
@@ -64,7 +64,7 @@ const HeaderLayout = () => {
                                     )
                                 }}>Home</NavLink>
                             </li>
-                            <li className="dropdown">
+                            <li className="dropdown" >
                                 <NavLink href="#" className={(()=>{
                                     if (url == 'daftar-guru' || url == 'daftar-berita' || url == 'tentang-kami' || url == 'daftar-jurusan') {
                                         return 'dropdown-toggle active'
@@ -72,20 +72,20 @@ const HeaderLayout = () => {
                                         return 'dropdown-toggle'
                                     }
                                 })} data-toggle="dropdown" style={{color:"white"}}>Informasi</NavLink>
-                                <ul className="dropdown-menu">
+                                <ul className="dropdown-menu" style={{backgroundColor:"#FF1949"}}>
                                     {/* <li><a href="#" onClick={()=>navigate('/tentang-kami')}>Tentang SMK 1 Krian</a></li> */}
-                                    <li><a href="#" onClick={()=>navigate('/daftar-berita')}>Daftar Berita</a></li>
-                                    <li><a href="#" onClick={()=>navigate('/daftar-guru')}>Daftar Guru</a></li>
-                                    <li><a href="#" onClick={()=>navigate('/daftar-jurusan')}>Daftar Jurusan</a></li>
-                                    <li><a href="#" onClick={()=>navigate('/daftar-prestasi')}>Daftar Prestasi</a></li>
-                                    <li><a href="#" onClick={()=>navigate('/daftar-program-unggulan')}>Daftar Program Unggulan</a></li>
+                                    <li><a style={{color:"white"}} href="#" onClick={()=>navigate('/daftar-berita')}>Daftar Berita</a></li>
+                                    <li><a style={{color:"white"}} href="#" onClick={()=>navigate('/daftar-guru')}>Daftar Guru</a></li>
+                                    <li><a style={{color:"white"}} href="#" onClick={()=>navigate('/daftar-jurusan')}>Daftar Jurusan</a></li>
+                                    <li><a style={{color:"white"}} href="#" onClick={()=>navigate('/daftar-prestasi')}>Daftar Prestasi</a></li>
+                                    <li><a style={{color:"white"}} href="#" onClick={()=>navigate('/daftar-program-unggulan')}>Daftar Program Unggulan</a></li>
 
                                 </ul>
                             </li>
                             <li className="dropdown">
                                 <a href="#" style={{color:"white"}} className="dropdown-toggle" data-toggle="dropdown" >Kesiswaan</a>
-                                <ul className="dropdown-menu">
-                                    <li><NavLink href="#" to={'/daftar-kesiswaan'}>Informasi Kesiswaan</NavLink></li>
+                                <ul className="dropdown-menu" style={{backgroundColor:"#FF1949"}}>
+                                    <li><NavLink style={{color:"white"}} href="#" to={'/daftar-kesiswaan'}>Informasi Kesiswaan</NavLink></li>
                                 </ul>
                             </li>
                             {/* <li className="dropdown">
@@ -103,8 +103,8 @@ const HeaderLayout = () => {
                             </li> */}
                             <li className="dropdown">
                                 <a href="#" style={{color:"white"}} className="dropdown-toggle" data-toggle="dropdown" >Alumni</a>
-                                <ul className="dropdown-menu">
-                                    <li><a href="#">--</a></li>
+                                <ul className="dropdown-menu" style={{backgroundColor:"#FF1949"}}>
+                                    <li><a style={{color:"white"}} href="#">--</a></li>
                                 </ul>
                             </li>
                             <li className="dropdown">
@@ -115,9 +115,9 @@ const HeaderLayout = () => {
                                         return 'dropdown-toggle'
                                     }
                                 })} >Contact</NavLink>
-                                <ul className="dropdown-menu">
-                                    <li><a href="#" onClick={()=>navigate('/contact')}>Contact</a></li>
-                                    <li><a href="http://smkkrian1.sch.id/" target='_blank'>Old Website</a></li>
+                                <ul className="dropdown-menu" style={{backgroundColor:"#FF1949"}}>
+                                    <li><a style={{color:"white"}} href="#" onClick={()=>navigate('/contact')}>Contact</a></li>
+                                    <li><a style={{color:"white"}} href="http://smkkrian1.sch.id/" target='_blank'>Old Website</a></li>
                                 </ul>
                             </li>
                             <li className="dropdown">
@@ -128,8 +128,8 @@ const HeaderLayout = () => {
                                         return 'dropdown-toggle'
                                     }
                                 })} >PPDB</NavLink>
-                                <ul className="dropdown-menu">
-                                    <li><a  href="#" onClick={()=>navigate('/informasi-ppdb')}>Informasi PPDB</a></li>
+                                <ul className="dropdown-menu" style={{backgroundColor:"#FF1949"}}>
+                                    <li><a style={{color:"white"}}  href="#" onClick={()=>navigate('/informasi-ppdb')}>Informasi PPDB</a></li>
                                 </ul>
                             </li>
                         </ul>
