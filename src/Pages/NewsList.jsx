@@ -20,7 +20,7 @@ export default function NewsList() {
     const handleGoToDetailNews = (news_slug) => {
         navigate(`/baca-berita/${news_slug}`);
     }
-
+ 
     const daftarBerita = async () => {
         try {
             const data = await fetch(ApiBerita);
@@ -61,7 +61,7 @@ export default function NewsList() {
     }
 
     const fetchBeritaBerdasarkanKategori = async (kategori_slug) => {
-        const response = await fetch(`http://localhost:8000/api/daftar-berita-berdasarkan-kategori/${kategori_slug}`);
+        const response = await fetch(`https://admin.smkskrian1.com/api/daftar-berita-berdasarkan-kategori/${kategori_slug}`);
         const data = await response.json();
         return data.data;
     }

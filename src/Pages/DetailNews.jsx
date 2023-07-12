@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function DetailNews() {
 
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
     const { slug } = useParams();
     const [berita,setBerita] = useState([]);
     const [dataBeritaPopuler, setdataBeritaPopuler] = useState([]);
@@ -17,7 +17,7 @@ export default function DetailNews() {
     const ApiBeritaPopuler = "https://admin.smkskrian1.com/api/berita-populer";
     const ApiKategori = "https://admin.smkskrian1.com/api/daftar-kategori";
     const berita_image = "https://admin.smkskrian1.com/image_news/";
-
+    
     const thisBerita = async (slug) => {
         const data = await fetch(`https://admin.smkskrian1.com/api/baca-berita/${slug}`);
         const response = await data.json();

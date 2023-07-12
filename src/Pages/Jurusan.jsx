@@ -9,7 +9,8 @@ export default function Jurusan() {
 
     const [dataJurusan, setJurusan] = useState([]);
     const ApiJurusan = "https://admin.smkskrian1.com/api/daftar-jurusan";
-    const jurusan_image = "https://admin.smkskrian1.com/image_jurusan/";
+    const jurusan_image = "http://admin.smkskrian1.com/image_jurusan/";
+    const navigate = useNavigate();
 
     const daftarJurusan = async () => {
         try {
@@ -20,6 +21,10 @@ export default function Jurusan() {
         }   catch (err) { 
             console.log(err);
         }
+    }
+
+    const handleGoToDetailJurusan = (jurusan_slug) => {
+        navigate(`/detail-jurusan/${jurusan_slug}`);
     }
 
     useEffect(()=>{
@@ -55,7 +60,7 @@ export default function Jurusan() {
                                                 </div>
                                             </div>
                                             <h4>
-                                                <a href="#">{a.jurusan_name}</a>
+                                                <a href="#" onClick={()=>handleGoToDetailJurusan(a.jurusan_slug)}>{a.jurusan_name}</a>
                                             </h4>
                                         </div>
                                     </div>

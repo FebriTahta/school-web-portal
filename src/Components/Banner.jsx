@@ -7,14 +7,15 @@ export default function Banner(params) {
 
     const [dataBanner, setBanner] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    // const ApiBanner = "https://admin.smkskrian1.com/api/display-banner";
     const ApiBanner = "https://admin.smkskrian1.com/api/display-banner";
-    const banner_image = "https://admin.smkskrian1.com/news_image/";
+    const banner_image = "https://admin.smkskrian1.com/image_banner/";
 
     const navigate = useNavigate();
     
-    const handleGoToDetailNews = (news_slug) => {
-        navigate(`/baca-berita/${news_slug}`);
-    }
+    // const handleGoToDetailNews = (news_slug) => {
+    //     navigate(`/baca-berita/${news_slug}`);
+    // }
 
     const daftarBanner = async () => {
         setIsLoading(true);
@@ -38,12 +39,6 @@ export default function Banner(params) {
         <>
         <div className="banner-area bg-gray transparent-nav default bottom-large">
             <div id="bootcarousel" className="carousel text-light slide carousel-fade animate_text" data-ride="carousel">
-
-                {/* Indicators for slides */}
-
-                {/* {isLoading ? (<Skeleton/>) : (
-                    
-                )} */}
                 <div className="carousel-indicator">
                     <div className="container">
                         <div className="row">
@@ -63,22 +58,21 @@ export default function Banner(params) {
                     {isLoading ? (
                         <Skeleton height={200}/>
                         ) : (dataBanner ? dataBanner.map((a,i)=>{
-                        if (i == 1) {
+                        if (i == 0) {
                             return <div 
                             className="carousel-item active" 
                             key={i}>
-                                <div className="slider-thumb bg-cover" style={{backgroundImage:"url("+banner_image+a.news_image+")"}}></div>
+                                <div className="slider-thumb bg-cover" style={{backgroundImage:"url("+banner_image+a.banner_image+")"}}></div>
                                 <div className="box-table shadow dark" style={{height:"500px"}}>
                                     <div className="box-cell">
                                         <div className="container">
                                             <div className="row">
                                                 <div className="col-lg-9">
                                                     <div className="content">
-                                                        <h2 data-animation="animated fadeInRight"><strong className="title-banner" style={{fontSize:"50px"}}>{a.news_title.substring(0,30)}..</strong></h2>
+                                                        <h2 data-animation="animated fadeInRight"><strong className="title-banner" style={{fontSize:"50px"}}>{a.banner_name.substring(0,30)}..</strong></h2>
                                                         <p data-animation="animated slideInLeft" style={{lineHeight:"25px"}}>
-                                                            {a.news_desc.replace(/(<([^>]+)>)/gi, "").substring(0,150)}...
+                                                            {a.banner_desc.replace(/(<([^>]+)>)/gi, "").substring(0,150)}...
                                                         </p>
-                                                        <a onClick={() => handleGoToDetailNews(a.news_slug)} data-animation="animated fadeInUp" className="btn btn-sm btn-gradient" href="#">Read More</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -90,18 +84,17 @@ export default function Banner(params) {
                             return <div 
                             className="carousel-item" 
                             key={i}>
-                                <div className="slider-thumb bg-cover" style={{backgroundImage:"url("+banner_image+a.news_image+")"}}></div>
+                                <div className="slider-thumb bg-cover" style={{backgroundImage:"url("+banner_image+a.banner_image+")"}}></div>
                                 <div className="box-table shadow dark" style={{height:"500px"}}>
                                     <div className="box-cell">
                                         <div className="container">
                                             <div className="row">
                                                 <div className="col-lg-9">
                                                     <div className="content">
-                                                    <h2 data-animation="animated fadeInRight"><strong className="title-banner" style={{fontSize:"50px"}}>{a.news_title.substring(0,30)}..</strong></h2>
+                                                    <h2 data-animation="animated fadeInRight"><strong className="title-banner" style={{fontSize:"50px"}}>{a.banner_name.substring(0,30)}..</strong></h2>
                                                     <p data-animation="animated slideInLeft" style={{lineHeight:"25px"}}>
-                                                            {a.news_desc.replace(/(<([^>]+)>)/gi, "").substring(0,150)}...
+                                                            {a.banner_desc.replace(/(<([^>]+)>)/gi, "").substring(0,150)}...
                                                         </p>
-                                                        <a onClick={() => handleGoToDetailNews(a.news_slug)} data-animation="animated fadeInUp" className="btn btn-sm btn-gradient" href="#">Read More</a>
                                                     </div>
                                                 </div>
                                             </div>
