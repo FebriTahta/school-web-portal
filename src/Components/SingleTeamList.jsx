@@ -1,7 +1,7 @@
 export default function SingleTeamList(props) {
     return(
         <>
-            <div className="single-item col-lg-3 col-md-6 col-sm-6 col-6" style={{marginRight:"50px"}}>
+            <div className="single-item col-lg-3 col-md-6 col-sm-6 col-6" id={props.guru_id}>
                 <div className={props.class}>
                     <div className="item">
                         <div className="thumb">

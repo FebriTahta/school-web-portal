@@ -58,7 +58,7 @@ export default function Advisor(params) {
                 <div className="container">
                     <div className="advisor-items text-center slide-advisor" id="slide-advisor" style={{display:"flex",justifyContent:"start",overflowX:"auto",scrollBehavior:"smooth",marginBottom:"10px"}}>
                         {(previewGuru ? previewGuru.map((a,i)=>{
-                            return <SingleTeamList key={i} guru_wa={a.guru_wa} guru_name={a.guru_name} 
+                            return <SingleTeamList key={i} guru_wa={a.guru_wa} guru_name={a.guru_name} guru_id={'guru-home-mobile'}
                             guru_image={guru_image+a.guru_image} guru_jabatan={a.guru_jabatan} class={class_advisor}/>
                         }):null)}
                         {/* <SingleTeamList nama={nama} class={class_advisor}/> */}
