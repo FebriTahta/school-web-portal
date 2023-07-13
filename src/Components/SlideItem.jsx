@@ -5,6 +5,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 export default function SlideItem(params) {
     const [isLoading, setIsLoading] = useState(true);
+    const navigate = useNavigate();
     const scrollslideitemleft = () => {
         document.getElementById("slide-item").scrollLeft -= 330;
     }
@@ -13,6 +14,12 @@ export default function SlideItem(params) {
         document.getElementById("slide-item").scrollLeft += 330;
     }
 
+
+    const handleGoToDetailJurusan = (jurusan_slug) => {
+        navigate(`/detail-jurusan/${jurusan_slug}`);
+    }
+
+    
     const [previewJurusan, setpreviewJurusan] = useState([]);
     const ApiJurusan = "https://admin.smkskrian1.com/api/preview-jurusan";
     const jurusan_image = "https://admin.smkskrian1.com/image_jurusan/";
@@ -64,7 +71,7 @@ export default function SlideItem(params) {
                             <div className="item item-mobile" style={{width:"330px"}}>
                                 <div className="title nama-jurusan">
                                     <i className="flaticon-innovation"></i>
-                                    <h4><a href="#"  className="nama-jurusan">{a.jurusan_name}</a></h4>
+                                    <h4><a href="#" onClick={()=>handleGoToDetailJurusan(a.jurusan_slug)} className="nama-jurusan">{a.jurusan_name}</a></h4>
                                 </div>
                                 <div className="thumb">
                                     <span>{a.jurusan_anak+" anak "+a.jurusan_kelas+" kelas"}</span>
