@@ -62,7 +62,7 @@ export default function Banner(params) {
                             return <div 
                             className="carousel-item active" 
                             key={i}>
-                                <div className="slider-thumb bg-cover" style={{backgroundImage:"url("+banner_image+a.banner_image+")"}}></div>
+                                <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com"+a.banner_path+a.banner_image+")"}}></div>
                                 <div className="box-table shadow dark" style={{height:"500px"}}>
                                     <div className="box-cell">
                                         <div className="container">
@@ -84,7 +84,7 @@ export default function Banner(params) {
                             return <div 
                             className="carousel-item" 
                             key={i}>
-                                <div className="slider-thumb bg-cover" style={{backgroundImage:"url("+banner_image+a.banner_image+")"}}></div>
+                                <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com"+a.banner_path+a.banner_image+")"}}></div>
                                 <div className="box-table shadow dark" style={{height:"500px"}}>
                                     <div className="box-cell">
                                         <div className="container">
