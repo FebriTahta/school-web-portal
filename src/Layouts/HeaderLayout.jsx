@@ -48,7 +48,7 @@ const HeaderLayout = () => {
                             <i className="fa fa-bars"></i>
                         </button>
                         <NavLink to={'/'} className="navbar-brand" href="#">
-                            <img src="/assets/logo-putih.png" className="logo logo-desktop" style={{marginLeft:"20px"}} alt="Logo" />
+                            <img src="/assets/web-02.png" className="logo logo-desktop" id='logo-dekstop' style={{marginLeft:"20px"}} alt="Logo" />
                         </NavLink>
                     </div>
                     {/* End Header Navigation */}

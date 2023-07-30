@@ -71,7 +71,7 @@ export default function Banner(params) {
                                                     <div className="content">
                                                         <h2 data-animation="animated fadeInRight"><strong className="title-banner" style={{fontSize:"50px"}}>{a.banner_name.substring(0,30)}..</strong></h2>
                                                         <p data-animation="animated slideInLeft" style={{lineHeight:"25px"}}>
-                                                            {a.banner_desc.replace(/(<([^>]+)>)/gi, "").substring(0,150)}...
+                                                        {a.banner_path}{a.banner_desc.replace(/(<([^>]+)>)/gi, "").substring(0,150)}...
                                                         </p>
                                                     </div>
                                                 </div>

@@ -7,7 +7,7 @@ export default function TopInfo() {
                 
                     <div className="col-lg-7 col-md-12 left-info">
                         <div className="item-flex">
-                        <img src="/assets/logo-smk.png" className="logo" style={{maxWidth:"200px", position:"absolute", height:"210px", zIndex:"999", marginTop:"100px"}} alt="Logo" />
+                        <img src="/assets/web-01.png" className="logo" style={{width:"200px", position:"absolute", height:"300px", zIndex:"999", marginTop:"170px"}} alt="Logo" />
                             <ul className="list" >
                                 {/* <li style={{color:"black"}}>
                                     <i className="fas fa-phone"></i> Have any question? (031) 8971207

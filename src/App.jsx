@@ -18,6 +18,7 @@ import ProgramUnggulan from './Pages/ProgramList'
 import InfoPPDB from './Pages/InfoPPDB'
 import DetailPPDB from './Pages/DetailPPDB'
 import DetailJurusan from './Pages/DetailJurusan'
+import Alumni from './Pages/Alumni'
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
           <Route path='/informasi-ppdb' element={<InfoPPDB/>}></Route>
           <Route path='/detail-ppdb' element={<DetailPPDB/>}></Route>
           <Route path='/detail-jurusan/:slug' element={<DetailJurusan/>}></Route>
+          <Route path='/alumni' element={<Alumni/>}></Route>
         </Routes>
       </Router>
     </>

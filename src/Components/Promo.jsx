@@ -1,4 +1,7 @@
+import { useNavigate, NavLink } from "react-router-dom"
 export default function Promo(params) {
+    const navigate = useNavigate();
+
     return(
         <>
             <div className="about-area inc-fixed-bg default-padding-bottom" style={{marginTop:"30px"}}>
@@ -16,7 +19,7 @@ export default function Promo(params) {
                                 <p>
                                     kami memantau setiap perkembangan karir alumni kami dengan melakukan pendataan karir. hal ini akan meningkatkan kepercayaan publik tentang kesuksesan setelah menempuh pendidikan di lembaga kami
                                 </p>
-                                <a className="btn circle btn-md btn-gradient" href="#">Explore Karir Alumni</a>
+                                <NavLink className="btn circle btn-md btn-gradient" to={"/alumni"} href="#">Explore Karir Alumni</NavLink>
                             </div>
                         </div>
                     </div>

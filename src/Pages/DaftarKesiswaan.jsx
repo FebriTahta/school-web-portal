@@ -51,36 +51,40 @@ export default function DaftarKesiswaan(params) {
                         <div className="row">
                             <div className="blog-content col-lg-8 col-md-12">
                                 <div className="blog-item-box">
-                                    {/* Single Item */}
-                                    {(dataKesiswaan.data? dataKesiswaan.data.map((a,i)=>{
-                                        return <div className="single-item" key={i}>
-                                            <div className="item">
-                                                <div className="thumb">
-                                                    <a onClick={()=>handleGoToDetailKesiswaan(a.kesiswaan_slug)} href="#"><img src={kesiswaan_image+a.kesiswaan_image} style={{width:"100%"}} alt="Thumb" /></a>
-                                                </div>
-                                                <div className="content">
-                                                    <div className="top-info">
-                                                        <ul>
-                                                            <li>
-                                                                <i className="fas fa-calendar-alt"></i>
-                                                                {new Date(a.created_at).getDate()}/
-                                                                {new Date(a.created_at).toLocaleString('default', { month: 'short' })}/
-                                                                {new Date(a.created_at).getFullYear()}
-                                                            </li>
-                                                            <li className='hide-dokumen'><i className="fa fa-list"></i> {a.dokumen.length+" dokumen"}</li>
-                                                        </ul>
+                                    <div className="row">
+                                        {(dataKesiswaan.data? dataKesiswaan.data.map((a,i)=>{
+                                            return <div className="single-item col-md-6" key={i}>
+                                                <div className="item">
+                                                    <div className="thumb">
+                                                        <a onClick={()=>handleGoToDetailKesiswaan(a.kesiswaan_slug)} href="#"><img src={kesiswaan_image+a.kesiswaan_image} style={{width:"100%"}} alt="Thumb" /></a>
                                                     </div>
-                                                    <h3>
-                                                        <a onClick={()=>handleGoToDetailKesiswaan(a.kesiswaan_slug)} href="#">{a.kesiswaan_title.substring(0,30)}..</a>
-                                                    </h3>
-                                                    <p>
-                                                        {a.kesiswaan_desc.replace(/(<([^>]+)>)/gi, "").substring(0,100)}...
-                                                    </p>
-                                                    <a className="btn circle btn-sm btn-theme effect" href="#" onClick={()=>handleGoToDetailKesiswaan(a.kesiswaan_slug)}>Read More</a>
+                                                    <div className="content">
+                                                        <div className="top-info">
+                                                            <ul style={{fontSize:"12px"}}>
+                                                                <li>
+                                                                    <i className="fas fa-calendar-alt"></i>
+                                                                    {new Date(a.created_at).getDate()}/
+                                                                    {new Date(a.created_at).toLocaleString('default', { month: 'short' })}/
+                                                                    {new Date(a.created_at).getFullYear()}
+                                                                </li>
+                                                                <li className='hide-dokumen'><i className="fa fa-book"></i> {a.dokumen.length+" dokumen"}</li>
+                                                            </ul>
+                                                        </div>
+                                                        {a.kategori.map((a,i)=>{
+                                                            return <span key={i} className="badge badge-danger badge-kategori">{a.kategori_name}</span>
+                                                        })}
+                                                        <h3>
+                                                            <a style={{fontSize:"14px",textTransform:"uppercase"}} onClick={()=>handleGoToDetailKesiswaan(a.kesiswaan_slug)} href="#">{a.kesiswaan_title.substring(0,30)}..</a>
+                                                        </h3>
+                                                        <a className="btn circle btn-sm btn-theme effect" href="#" onClick={()=>handleGoToDetailKesiswaan(a.kesiswaan_slug)}>Read More</a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    }) :null)}
+                                        }) :null)}
+
+                                    </div>
+                                    {/* Single Item */}
+                                    
                                     {/* End Single Item */}
                                 </div>
                                 

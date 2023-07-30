@@ -9,6 +9,8 @@ import Total from '../Components/Total'
 import Advisor from '../Components/Advisor'
 import ProfileBottom from '../Components/ProfileBottom'
 import PrevKrsiswaan from '../Components/PrevKesiswaan'
+import BadgePPDB from '../Components/badgePPDB'
+
 
 export default function Home(params) {
     return(
@@ -16,6 +18,7 @@ export default function Home(params) {
             <TopInfo/>
             <HeaderLayout/>
             <Banner/>
+            {/* <BadgePPDB/> */}
             <HotNews/>
             <SlideItem/>
             <Promo/>
