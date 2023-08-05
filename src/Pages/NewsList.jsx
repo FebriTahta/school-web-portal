@@ -93,7 +93,7 @@ export default function NewsList() {
     return(
         <>
             <TopInfo/>
-            <HeaderLayout/>
+            <HeaderLayout/> 
             <HeroHeading judul={"Daftar Berita"}/>
             <div className="blog-area full-blog right-sidebar full-blog default-padding">
                 <div className="container">

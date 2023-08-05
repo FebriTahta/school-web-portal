@@ -8,7 +8,7 @@ import Promo from '../Components/Promo'
 import Total from '../Components/Total'
 import Advisor from '../Components/Advisor'
 import ProfileBottom from '../Components/ProfileBottom'
-import PrevKrsiswaan from '../Components/PrevKesiswaan'
+import PrevKesiswaan from '../Components/PrevKesiswaan'
 import BadgePPDB from '../Components/badgePPDB'
 
 
@@ -22,7 +22,7 @@ export default function Home(params) {
             <HotNews/>
             <SlideItem/>
             <Promo/>
-            <PrevKrsiswaan/>
+            <PrevKesiswaan/>
             <Total/>
             <Advisor/>
             <ProfileBottom/>

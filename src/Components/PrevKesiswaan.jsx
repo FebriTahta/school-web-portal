@@ -28,7 +28,7 @@ export default function PrevKrsiswaan() {
 
     return(
         <>
-            <div className="courses-area trend-layout bg-gray default-padding bottom-less">
+            <div className="blog-area full-blog trend-layout bg-gray default-padding bottom-less">
                 <div className="container">
                     <div className="heading-left">
                         <div className="row">
@@ -48,11 +48,44 @@ export default function PrevKrsiswaan() {
                     </div>
                 </div>
                 <div className="container">
-                    <div className="courses-items">
+                    <div className="blog-items">
                         <div className="row">
                             {/* Single item */}
+
+                            <div className="blog-content col-lg-12 col-md-12" >
+                                <div className="blog-item-box" > 
+                                    {/* Single Item */}
+                                    <div className="single-item" >
+                                        <div className="row">
+                                            {(dataKesiswaan ? dataKesiswaan.map((a,i)=>{
+                                                return <div className="col-md-4 mb-5" id={"kesiswaan-ke-"+i} key={i}>
+                                                    <div className="item">
+                                                        <div className="thumb" >
+                                                            <a href="#" onClick={() => handleGoToDetailKesiswaan(a.kesiswaan_slug)}><img src={kesiswaan_image+a.kesiswaan_image} alt="Thumb"/></a>
+                                                            <div className="date">
+                                                                <strong>{new Date(a.created_at).getDate()} </strong> {new Date(a.created_at).toLocaleString('default', { month: 'short' })}
+                                                            </div>
+                                                        </div>
+                                                        <div className="content" style={{marginTop:"20px"}}>
+                                                            {a.kategori.map((a,i)=>{
+                                                                return <span key={i} style={{marginRight:"5px"}} className="badge badge-danger">{a.kategori_name}</span>
+                                                            })}
+                                                            <h4 style={{fontSize:"18px",marginTop:"10px"}}><a href="#" onClick={() => handleGoToDetailKesiswaan(a.kesiswaan_slug)}>{a.kesiswaan_title.substring(0,50)}...</a></h4>
+                                                        </div>
+                                                        <div className="bottom-info">
+                                                            <span><i className="fas fa-user"></i> SMK 1 Krian</span>
+                                                            <a className="btn-more" href="#" onClick={() => handleGoToDetailKesiswaan(a.kesiswaan_slug)}>Read More <i className="arrow_right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }) :null)}
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             
-                            {(dataKesiswaan ? dataKesiswaan.map((a,i)=>{
+                            {/* {(dataKesiswaan ? dataKesiswaan.map((a,i)=>{
                                 return <div className="single-item col-lg-4 col-md-6" id={"kesiswaan-ke-"+i} key={i}>
                                     <div className="item">
                                         <div className="thumb">
@@ -82,7 +115,7 @@ export default function PrevKrsiswaan() {
                                         </div>
                                     </div>
                                 </div>
-                            }) : null)}
+                            }) : null)} */}
                             
                             {/* End Single item */}
                         </div>
