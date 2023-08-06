@@ -9,8 +9,6 @@ export default function Banner(params) {
     const [isLoading, setIsLoading] = useState(true);
     // const ApiBanner = "https://admin.smkskrian1.com/api/display-banner";
     const ApiBanner = "https://admin.smkskrian1.com/api/display-banner";
-    const banner_image = "https://admin.smkskrian1.com/image_banner/";
-
     const navigate = useNavigate();
     
     // const handleGoToDetailNews = (news_slug) => {
@@ -55,53 +53,88 @@ export default function Banner(params) {
 
                 {/* Wrapper for slides */}
                 <div className="carousel-inner carousel-zoom">
+                   
+
                     {isLoading ? (
                         <Skeleton height={200}/>
                         ) : (dataBanner ? dataBanner.map((a,i)=>{
                         if (i == 0) {
+                            if (a.path == 'banner_image') {
                             return <div 
-                            className="carousel-item active" 
-                            key={i}>
-                                <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com"+a.banner_path+a.banner_image+")"}}></div>
-                                <div className="box-table shadow dark" style={{height:"500px"}}>
-                                    <div className="box-cell">
-                                        <div className="container">
-                                            <div className="row">
-                                                <div className="col-lg-9">
-                                                    <div className="content">
-                                                        <h2 data-animation="animated fadeInRight"><strong className="title-banner" style={{fontSize:"50px"}}>{a.banner_name.substring(0,30)}..</strong></h2>
-                                                        <p data-animation="animated slideInLeft" style={{lineHeight:"25px"}}>
-                                                        {a.banner_path}{a.banner_desc.replace(/(<([^>]+)>)/gi, "").substring(0,150)}...
-                                                        </p>
+                                className="carousel-item active" 
+                                key={i}>
+                                    <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com/"+a.path+'/'+a.banner_image+")"}}></div>
+                                    <div className="box-table shadow" style={{height:"500px"}}>
+                                        <div className="box-cell">
+                                            <div className="container">
+                                                <div className="row">
+                                                    <div className="col-lg-9">
+                                                        <div className="content">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>   
+                            }else{
+                                return <div 
+                                className="carousel-item active" 
+                                key={i}>
+                                    <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com/"+a.path+'/'+a.news_image+")"}}></div>
+                                    <div className="box-table shadow" style={{height:"500px"}}>
+                                        <div className="box-cell">
+                                            <div className="container">
+                                                <div className="row">
+                                                    <div className="col-lg-9">
+                                                        <div className="content">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            }
+
                         }else{
-                            return <div 
-                            className="carousel-item" 
-                            key={i}>
-                                <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com"+a.banner_path+a.banner_image+")"}}></div>
-                                <div className="box-table shadow dark" style={{height:"500px"}}>
-                                    <div className="box-cell">
-                                        <div className="container">
-                                            <div className="row">
-                                                <div className="col-lg-9">
-                                                    <div className="content">
-                                                    <h2 data-animation="animated fadeInRight"><strong className="title-banner" style={{fontSize:"50px"}}>{a.banner_name.substring(0,30)}..</strong></h2>
-                                                    <p data-animation="animated slideInLeft" style={{lineHeight:"25px"}}>
-                                                            {a.banner_desc.replace(/(<([^>]+)>)/gi, "").substring(0,150)}...
-                                                        </p>
+                            if (a.path == 'banner_image') {
+                                return <div 
+                                    className="carousel-item active" 
+                                    key={i}>
+                                        <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com/"+a.path+'/'+a.banner_image+")"}}></div>
+                                        <div className="box-table shadow" style={{height:"500px"}}>
+                                            <div className="box-cell">
+                                                <div className="container">
+                                                    <div className="row">
+                                                        <div className="col-lg-9">
+                                                            <div className="content">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>   
+                                }else{
+                                    return <div 
+                                    className="carousel-item" 
+                                    key={i}>
+                                        <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com/"+a.path+'/'+a.news_image+")"}}></div>
+                                        <div className="box-table shadow" style={{height:"500px"}}>
+                                            <div className="box-cell">
+                                                <div className="container">
+                                                    <div className="row">
+                                                        <div className="col-lg-9">
+                                                            <div className="content">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+                                }
                         }
                         
                     }):null)}

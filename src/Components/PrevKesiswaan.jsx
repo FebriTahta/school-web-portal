@@ -85,38 +85,6 @@ export default function PrevKrsiswaan() {
                                 </div>
                             </div>
                             
-                            {/* {(dataKesiswaan ? dataKesiswaan.map((a,i)=>{
-                                return <div className="single-item col-lg-4 col-md-6" id={"kesiswaan-ke-"+i} key={i}>
-                                    <div className="item">
-                                        <div className="thumb">
-                                            <a href="#" onClick={()=>handleGoToDetailKesiswaan(a.kesiswaan_slug)}>
-                                                <img src={kesiswaan_image+a.kesiswaan_image} style={{objectFit:"cover", width:"100%",height:"250px"}} alt="Thumb" />
-                                            </a>
-                                        </div>
-                                        <div className="info">
-                                            <h4>
-                                                <a onClick={()=>handleGoToDetailKesiswaan(a.kesiswaan_slug)} href="#" style={{textTransform:"uppercase"}}>{a.kesiswaan_title.substring(0,30)}..</a>
-                                            </h4>
-                                            <div className="bottom-info">
-                                                <div className="course-info">
-                                                    <ul>
-                                                        <li><i className="fas fa-clock"></i>
-                                                            {new Date(a.created_at).getDate()}/
-                                                            {new Date(a.created_at).toLocaleString('default', { month: 'short' })}/
-                                                            {new Date(a.created_at).getFullYear()}
-                                                        </li>
-                                                        <li><i className="fas fa-list-ul"></i> {a.dokumen.length+" dokumen"}</li>
-                                                    </ul>
-                                                </div>
-                                                <div className="enroll">
-                                                    <a onClick={()=>handleGoToDetailKesiswaan(a.kesiswaan_slug)} className="btn btn-theme effect btn-xs">Selengkapnya</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            }) : null)} */}
-                            
                             {/* End Single item */}
                         </div>
                     </div>
