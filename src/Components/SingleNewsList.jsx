@@ -18,7 +18,9 @@ export default function SingleNewsList(props){
             <div className="col-md-6 mb-5">
                 <div className="item">
                     <div className="thumb">
-                        <a href="#" onClick={() => handleGoToDetailNews(props.news_slug)}><img src={props.news_image} alt="Thumb"/></a>
+                        <a href="#" onClick={() => handleGoToDetailNews(props.news_slug)} >
+                            <img style={{objectFit:"cover", width:"100%", minHeight:"250px"}} src={props.news_image} alt="Thumb"/>
+                        </a>
                         <div className="date">
                             <strong>{props.news_tanggal} </strong> {props.news_bulan}
                         </div>

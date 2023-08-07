@@ -1,5 +1,6 @@
 
 import '../App.css'
+import '../App.scss'
 import React, { useRef, useLayoutEffect } from 'react'
 import { useNavigate, NavLink } from "react-router-dom"
 

@@ -10,15 +10,18 @@ import Advisor from '../Components/Advisor'
 import ProfileBottom from '../Components/ProfileBottom'
 import PrevKesiswaan from '../Components/PrevKesiswaan'
 import BadgePPDB from '../Components/badgePPDB'
+import Brosur from '../Components/Brosur'
+import FloatMenu from '../Components/FloatMenu'
 
 
 export default function Home(params) {
     return(
         <>
+            
             <TopInfo/>
             <HeaderLayout/>
             <Banner/>
-            {/* <BadgePPDB/> */}
+            <BadgePPDB/>
             <HotNews/>
             <SlideItem/>
             <Promo/>
@@ -27,6 +30,9 @@ export default function Home(params) {
             <Advisor/>
             <ProfileBottom/>
             <FooterLayout/>
+            <Brosur/>
+
+            <FloatMenu/>
         </>
     )
 }

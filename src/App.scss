@@ -1,0 +1,231 @@
+$height: 60px;
+$margin: 30px;
+
+$height2: 450px;
+$margin2: 0;
+
+$height3: 600px;
+$margin3: 0;
+
+@media only screen and (max-width: 600px) {
+	.promo-brosur{
+		$self: &;
+		overflow: hidden;
+		&__inner{
+			height: $height2;
+			transition: all .5s ease-in-out;
+			&__one,
+			&__two{
+				height: $height2;
+			}
+			&__two{
+				margin-top: $margin2;
+			}
+		}
+		// change threshold below
+		@media (max-width: 9999px){
+			&--toggle{
+				#{$self}__inner{
+					transform: translateY(-$height2 - $margin2);
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 601px) {
+	.promo-brosur{
+		$self: &;
+		overflow: hidden;
+		&__inner{
+			height: $height3;
+			transition: all .5s ease-in-out;
+			&__one,
+			&__two{
+				height: $height3;
+			}
+			&__two{
+				margin-top: $margin3;
+			}
+		}
+		// change threshold below
+		@media (max-width: 9999px){
+			&--toggle{
+				#{$self}__inner{
+					transform: translateY(-$height3 - $margin3);
+				}
+			}
+		}
+	}
+}
+
+.promo-banner{
+	$self: &;
+	overflow: hidden;
+	&__inner{
+		height: $height;
+		transition: all .5s ease-in-out;
+		&__one,
+		&__two{
+			height: $height;
+		}
+		&__two{
+			margin-top: $margin;
+		}
+	}
+	// change threshold below
+	@media (max-width: 9999px){
+		&--toggle{
+			#{$self}__inner{
+				transform: translateY(-$height - $margin);
+			}
+		}
+	}
+}
+
+
+// float
+
+// // this -- well, because this.
+// * {
+// 	box-sizing:border-box;
+// }
+
+// this makes a basic circle
+@mixin circle($param) {
+	width:$param;
+	height:$param;
+	border-radius:50%;
+}
+
+// Brand Colour Palette
+$purple:#FF1949;
+$green:#1ef0a0;
+$blue:#FF1949;
+$red:#ff3c4b;
+
+body {
+	// background-color: $purple;
+	height:100vh;
+	width:100vw;
+	position: relative;
+}
+
+// this is what I use to place the menu thing wherever I want
+.containers {
+	position: fixed;
+	bottom:1em;
+	right:1em;
+}
+
+// this toggles the whole damn thing
+.float-toggle {
+	@include circle(60px);
+	background-color: $green;
+	box-shadow:4px 4px 2px 1px rgba(#000, 0.2);
+	
+	position: absolute;
+	z-index:5;
+	bottom:0;
+	right:0;
+	display:table;
+	
+	text-align: center;
+	
+	.fa {
+		color:#fff;
+		font-size:2em;
+		display:table-cell;
+		vertical-align:middle;
+		transition:0.4s;
+	}
+	
+	// Twist the plus so it looks like a close 'x'
+	&.open .fa {
+		transform:rotate(135deg);
+	}
+}
+
+// Single Template buttons
+.btn-app {
+	margin-bottom: 10px;
+	@include circle(2.5em);
+	position:absolute;
+	
+	background-color: $blue;
+	color:#fff;
+	text-align: center;
+	
+	.fa {
+		line-height:2.5em;
+	}
+}
+
+// add shadow only when templates are activated
+.open .btn-app {
+	box-shadow:4px 4px 2px 1px rgba(#000, 0.2);
+}
+
+// The most-popular apps in a circular thingo
+.float-round {
+	position: absolute;
+	bottom:0;
+	right:0;
+	z-index:3;
+	
+	.btn-app {
+		bottom:0.25em;
+		right:0.25em;
+		transition:0.4s;
+	}
+	
+	// position of templates when activated
+	&.open {
+		.btn-app:nth-of-type(1){
+			right:0.5em;
+			bottom:4.25em;
+			transition-delay:0.2s;
+		}
+		.btn-app:nth-of-type(2){
+			right:3.5em;
+			bottom:3.5em;
+			transition-delay:0.1s;
+		}
+		.btn-app:nth-of-type(3){
+			right:4.25em;
+			bottom:0.5em;
+		}
+	}	
+
+}
+
+// stacked template icons
+.float-line {
+	position: absolute;
+	z-index:2;
+	
+	.btn-app {
+		bottom:0;
+		right:0.5em;
+		transition:0.3s;
+		transition-delay:0.5s;
+	}
+	
+	&.open {
+		// first one. add 3 to each subsequent template
+		$bottom:4.25em;
+		$templates:7;
+		
+		.btn-app:nth-of-type(1) {
+			bottom:$bottom;
+		}
+		
+		// align each template item on top of the next
+		@for $i from 1 through $templates {
+			.btn-app:nth-of-type(#{$i}) {
+				bottom:$bottom + 3 * $i;
+			}
+		}
+	}	
+	
+}

@@ -7,14 +7,20 @@
 * ================================================================= */
 
 
-
 (function($) {
     "use strict";
 
+    
+
     $(document).on('ready', function() {
+        setInterval(function(){
+            document.querySelector('.promo-banner').classList.toggle('promo-banner--toggle');
+        }, 5000);
 
-        
-
+        setInterval(function(){
+            document.querySelector('.promo-brosur').classList.toggle('promo-brosur--toggle');
+        }, 5000);
+         
         /* ==================================================
             # Wow Init
          ===============================================*/
@@ -48,6 +54,13 @@
                 scrollTop: $($anchor.attr('href')).offset().top - headerH + "px"
             }, 1500, 'easeInOutExpo');
             event.preventDefault();
+        });
+
+        $( ".float-toggle" ).on('click',function() {
+            $(".float-toggle").toggleClass('open');
+            $(".float-round").toggleClass('open');
+            $(".float-line").toggleClass('open');
+            console.log('oke oke');
         });
 
 

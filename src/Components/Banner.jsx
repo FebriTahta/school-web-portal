@@ -64,7 +64,7 @@ export default function Banner(params) {
                                 className="carousel-item active" 
                                 key={i}>
                                     <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com/"+a.path+'/'+a.banner_image+")"}}></div>
-                                    <div className="box-table shadow" style={{height:"500px"}}>
+                                    <div className="box-table banner shadow" style={{height:"450px"}}>
                                         <div className="box-cell">
                                             <div className="container">
                                                 <div className="row">
@@ -82,7 +82,7 @@ export default function Banner(params) {
                                 className="carousel-item active" 
                                 key={i}>
                                     <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com/"+a.path+'/'+a.news_image+")"}}></div>
-                                    <div className="box-table shadow" style={{height:"500px"}}>
+                                    <div className="box-table banner shadow" style={{height:"500px"}}>
                                         <div className="box-cell">
                                             <div className="container">
                                                 <div className="row">
@@ -103,7 +103,7 @@ export default function Banner(params) {
                                     className="carousel-item active" 
                                     key={i}>
                                         <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com/"+a.path+'/'+a.banner_image+")"}}></div>
-                                        <div className="box-table shadow" style={{height:"500px"}}>
+                                        <div className="box-table banner shadow" style={{height:"500px"}}>
                                             <div className="box-cell">
                                                 <div className="container">
                                                     <div className="row">
@@ -121,7 +121,7 @@ export default function Banner(params) {
                                     className="carousel-item" 
                                     key={i}>
                                         <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com/"+a.path+'/'+a.news_image+")"}}></div>
-                                        <div className="box-table shadow" style={{height:"500px"}}>
+                                        <div className="box-table banner shadow" style={{height:"500px"}}>
                                             <div className="box-cell">
                                                 <div className="container">
                                                     <div className="row">

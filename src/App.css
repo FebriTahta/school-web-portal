@@ -47,18 +47,32 @@
   top: 0;
 }
 
+.new-info {
+  color: white;
+}
+
 @media only screen and (max-width: 600px) {
   /* mobile */
   .recent-news {
       height: 200px !important;
   }
 
+  .new-info {
+    line-height: 16px;
+    font-size: 12px;
+    color: white;
+  }
+
+  .banner {
+    max-height: 200px !important;
+  }
+
   .judul-hot-news {
     font-size: 14px;
   }
   .desc-hot-news{
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 13px;
+    line-height: 20px;
   }
   #guru-home-mobile {
     margin-right: 50px !important;
@@ -172,9 +186,44 @@
 
 @media only screen and (min-width: 601px) {
   /* desktop */
+  .tanggal-berita {
+    font-size: 12px;
+  }
+
+  .bottom-info {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .btn-2hotnews {
+    width: 100%;
+  }
+
+  .judul-hot-news {
+    margin-top: 10px;
+    font-size: 14px !important;
+  }
+
+  .desc-hot-news {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
   .recent-news {
       height: 200px !important;
   }
+
+  .recent-title {
+    font-size: 14px;
+    margin-top: 3px;
+  }
+
+  .text {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
   .logo-desktop {
     max-width: 190px;
     height: 47px !important;
@@ -200,7 +249,9 @@
 
   .badge-kategori {
     margin-right: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
+    font-size: 10px;
+    line-height: 10px !important;
   }
 }
 
@@ -225,3 +276,8 @@
 .dropdown:hover .dropdown-menu{
   display: block;
 }
+
+
+
+/* floating menu */
+

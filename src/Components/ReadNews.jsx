@@ -1,6 +1,7 @@
 import FooterLayout from "../Layouts/FooterLayout";
 
 export default function ReadNews(props) {
+    
     return (
         <>
             <div className="item"> 
@@ -8,7 +9,7 @@ export default function ReadNews(props) {
                 <div className="blog-item-box">
                     {/* Start Post Thumb */}
                     <div className="thumb">
-                        <img src={props.news_image} alt="Thumb" />
+                        <img style={{width:"100%"}} src={props.news_image} alt="Thumb" />
                     </div>
                     {/* Start Post Thumb */}
 
