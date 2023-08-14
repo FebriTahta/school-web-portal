@@ -6,14 +6,14 @@ import Sosmed from "./Sosmed"
 
 export default function HotNews(params) {
 
-    const [hotNews, sethotNews] = useState([]);
     const [arsip, setArsip] = useState([]);
+    const [last, setLast] = useState([]);
     const [recentNews, setrecentNews] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isLoading2, setIsLoading2] = useState(true);
-    const apihotNews = "https://admin.smkskrian1.com/api/hot-news";
     const apiArsip = "https://admin.smkskrian1.com/api/display-arsip";
     const apirecentNews = "https://admin.smkskrian1.com/api/recent-news";
+    const apiLatestNews = "https://admin.smkskrian1.com/api/latest-news";
     const image_src  = "https://admin.smkskrian1.com/news_image/";
     const image_arsip  = "https://admin.smkskrian1.com/arsip_image/";
     const navigate = useNavigate();
@@ -33,19 +33,19 @@ export default function HotNews(params) {
         }
     }
 
-    const daftarhotNews = async () => {
+    const daftarLast = async () => {
         setIsLoading(true);
         try {
-            const data = await fetch(apihotNews);
+            const data = await fetch(apiLatestNews);
             const response = await data.json();
-            sethotNews(response.data);
+            setLast(response.data);
 
         }   catch (err) { 
             console.log(err);
         }
         setIsLoading(false);
     }
-
+    
     const daftarrecentNews = async () => {
         setIsLoading2(true)
         try {
@@ -59,10 +59,9 @@ export default function HotNews(params) {
     }
 
     useEffect(()=>{
-        daftarhotNews();
         daftarrecentNews();
         daftarArsip();
-        console.log(arsip);
+        daftarLast();
     },[]);
 
 
@@ -85,44 +84,42 @@ export default function HotNews(params) {
                         <div className="col-md-9">
                             <div className="row">
                                 {/* Single Event */}
-                                    {isLoading ? (<Skeleton count={4}/>) : (hotNews ? hotNews.map((a,i)=> {
-                                        if (i == "0") {
-                                            return <div className="single-item col-lg-6" key={i} >
-                                                <div className="item" style={{backgroundColor:"transparent",boxShadow:"none"}}>
-                                                    <div className="">
-                                                        <img src={image_src+a.news_image} style={{objectFit:"cover",width:"100%", height:"320px"}} alt="Thumb"/>
+                                    {isLoading ? (<Skeleton count={4}/>) : (last ? 
+                                    <div className="single-item col-lg-6" key={last.id} >
+                                        <div className="item" style={{backgroundColor:"transparent",boxShadow:"none"}}>
+                                            <div className="">
+                                                <img src={image_src+last.news_image} style={{objectFit:"cover",width:"100%", height:"320px"}} alt="Thumb"/>
+                                            </div>
+                                            <div className="info" style={{marginTop:"40px"}}>
+                                                <div className="content" style={{textAlign:"left"}}>
+                                                    <div className="top-info">
+                                                        <ul>
+                                                            <li>
+                                                                <i className="fas fa-calendar-alt"></i> 
+                                                                {new Date(last.created_at).toLocaleString('default', { month: 'long' })} 
+                                                                {new Date(last.created_at).getDate()} , 
+                                                                {new Date(last.created_at).getFullYear()}
+                                                            </li>
+                                                            <li><i className="fas fa-clock"></i> {new Date(last.created_at).getHours()}:{new Date(last.created_at).getMinutes()}</li>
+                                                        </ul>
                                                     </div>
-                                                    <div className="info" style={{marginTop:"40px"}}>
-                                                        <div className="content" style={{textAlign:"left"}}>
-                                                            <div className="top-info">
-                                                                <ul>
-                                                                    <li>
-                                                                        <i className="fas fa-calendar-alt"></i> 
-                                                                        {new Date(a.created_at).toLocaleString('default', { month: 'long' })} 
-                                                                        {new Date(a.created_at).getDate()} , 
-                                                                        {new Date(a.created_at).getFullYear()}
-                                                                    </li>
-                                                                    <li><i className="fas fa-clock"></i> {new Date(a.created_at).getHours()}:{new Date(a.created_at).getMinutes()}</li>
-                                                                </ul>
-                                                            </div>
-                                                            {a.kategori.map((a,i)=>{
-                                                                return <span key={i} className="badge badge-danger badge-kategori">{a.kategori_name}</span>
-                                                            })}
-                                                            <h4 className="judul-hot-news">
-                                                                <a href="#" onClick={()=>handleGoToDetailNews(a.news_slug)}>{a.news_title.substring(0,70)}...</a>
-                                                            </h4>
-                                                            <p className="desc-hot-news"> 
-                                                                {a.news_desc.replace(/(<([^>]+)>)/gi, "").substring(0,150)}...
-                                                            </p>
-                                                            <div className="bottom-info">
-                                                                <a href="#" onClick={()=>handleGoToDetailNews(a.news_slug)} className="btn circle btn-theme effect btn-sm btn-2hotnews">BACA SEKARANG</a>
-                                                            </div>
-                                                        </div>
+                                                    {last.kategori.map((a,i)=>{
+                                                        return <span key={i} className="badge badge-danger badge-kategori">{a.kategori_name}</span>
+                                                    })}
+                                                    <h4 className="judul-hot-news">
+                                                        <a href="#" onClick={()=>handleGoToDetailNews(last.news_slug)}>{last.news_title.substring(0,70)}...</a>
+                                                    </h4>
+                                                    <p className="desc-hot-news"> 
+                                                        {last.news_desc.replace(/(<([^>]+)>)/gi, "").substring(0,150)}...
+                                                    </p>
+                                                    <div className="bottom-info">
+                                                        <a href="#" onClick={()=>handleGoToDetailNews(last.news_slug)} className="btn circle btn-theme effect btn-sm btn-2hotnews">BACA SEKARANG</a>
                                                     </div>
                                                 </div>
                                             </div>
-                                        }
-                                    }):null)}
+                                        </div>
+                                    </div>    
+                                    :null)}
 
                                     <div className="single-item col-lg-6">
                                         {isLoading2 ? (<Skeleton count={4}/>) : (recentNews ? recentNews.map((a,i)=>{

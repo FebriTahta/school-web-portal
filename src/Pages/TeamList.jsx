@@ -4,6 +4,8 @@ import TopInfo from '../Components/TopInfo';
 import HeroHeading from '../Components/HeroHeading';
 import SingleTeamList from '../Components/SingleTeamList';
 import {useEffect,useState} from "react"
+import Preloader from '../Components/Preloader';
+import FloatMenu from '../Components/FloatMenu';
 
 export default function TeamList() {
     const [dataGuru, setGuru] = useState([]);
@@ -28,6 +30,8 @@ export default function TeamList() {
     return(
         <>
         <div style={{width:"100%"}}>
+            <Preloader/>
+            <FloatMenu/>
             <TopInfo/>
             <HeaderLayout/>
             <HeroHeading judul={"Daftar Guru"}/>

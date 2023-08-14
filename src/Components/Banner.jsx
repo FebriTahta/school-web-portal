@@ -21,7 +21,6 @@ export default function Banner(params) {
             const data = await fetch(ApiBanner);
             const response = await data.json();
             setBanner(response.data);
-            console.log(response.data);
 
         }   catch (err) { 
             console.log(err);
@@ -58,84 +57,23 @@ export default function Banner(params) {
                     {isLoading ? (
                         <Skeleton height={200}/>
                         ) : (dataBanner ? dataBanner.map((a,i)=>{
-                        if (i == 0) {
-                            if (a.path == 'banner_image') {
                             return <div 
-                                className="carousel-item active" 
-                                key={i}>
-                                    <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com/"+a.path+'/'+a.banner_image+")"}}></div>
-                                    <div className="box-table banner shadow" style={{height:"450px"}}>
-                                        <div className="box-cell">
-                                            <div className="container">
-                                                <div className="row">
-                                                    <div className="col-lg-9">
-                                                        <div className="content">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>   
-                            }else{
-                                return <div 
-                                className="carousel-item active" 
-                                key={i}>
-                                    <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com/"+a.path+'/'+a.news_image+")"}}></div>
-                                    <div className="box-table banner shadow" style={{height:"500px"}}>
-                                        <div className="box-cell">
-                                            <div className="container">
-                                                <div className="row">
-                                                    <div className="col-lg-9">
-                                                        <div className="content">
-                                                        </div>
+                            className="carousel-item active" 
+                            key={i}>
+                                <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com/banner_image/"+a.banner_image+")"}}></div>
+                                <div className="box-table banner shadow" style={{height:"450px"}}>
+                                    <div className="box-cell">
+                                        <div className="container">
+                                            <div className="row">
+                                                <div className="col-lg-9">
+                                                    <div className="content">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            }
-
-                        }else{
-                            if (a.path == 'banner_image') {
-                                return <div 
-                                    className="carousel-item active" 
-                                    key={i}>
-                                        <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com/"+a.path+'/'+a.banner_image+")"}}></div>
-                                        <div className="box-table banner shadow" style={{height:"500px"}}>
-                                            <div className="box-cell">
-                                                <div className="container">
-                                                    <div className="row">
-                                                        <div className="col-lg-9">
-                                                            <div className="content">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>   
-                                }else{
-                                    return <div 
-                                    className="carousel-item" 
-                                    key={i}>
-                                        <div className="slider-thumb bg-cover" style={{backgroundImage:"url(https://admin.smkskrian1.com/"+a.path+'/'+a.news_image+")"}}></div>
-                                        <div className="box-table banner shadow" style={{height:"500px"}}>
-                                            <div className="box-cell">
-                                                <div className="container">
-                                                    <div className="row">
-                                                        <div className="col-lg-9">
-                                                            <div className="content">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                }
-                        }
+                            </div>  
                         
                     }):null)}
                 </div>

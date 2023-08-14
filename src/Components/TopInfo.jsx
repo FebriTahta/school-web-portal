@@ -7,7 +7,7 @@ export default function TopInfo() {
                 
                     <div className="col-lg-7 col-md-12 left-info">
                         <div className="item-flex">
-                        <img src="/assets/web-01.png" className="logo" style={{width:"200px", position:"absolute", height:"300px", zIndex:"999", marginTop:"170px"}} alt="Logo" />
+                        <img src="/assets/web-01.png" className="logo" style={{width:"200px", position:"absolute", height:"300px", zIndex:"888", marginTop:"170px"}} alt="Logo" />
                             <ul className="list" >
                                 {/* <li style={{color:"black"}}>
                                     <i className="fas fa-phone"></i> Have any question? (031) 8971207
@@ -36,7 +36,7 @@ export default function TopInfo() {
                                         <a href="#"><i className="fab fa-pinterest-p"></i></a>
                                     </li> */}
                                     <li >
-                                        <i className="fas fa-phone" style={{color:"#FF1949"}}> </i> <span style={{color:"black"}}> Have any question? (031) 8971207</span>
+                                        <i className="fas fa-phone" style={{color:"#FF1949"}}> </i> <span style={{color:"black", fontWeight:"600"}}> TELP SMK 1 KRIAN : (031) 8971207 </span>
                                     </li>
                                 </ul>
                             </div>

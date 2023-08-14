@@ -12,26 +12,25 @@ import PrevKesiswaan from '../Components/PrevKesiswaan'
 import BadgePPDB from '../Components/badgePPDB'
 import Brosur from '../Components/Brosur'
 import FloatMenu from '../Components/FloatMenu'
+import Preloader from '../Components/Preloader'
 
 
 export default function Home(params) {
     return(
         <>
-            
+            <Preloader/>
             <TopInfo/>
             <HeaderLayout/>
             <Banner/>
             <BadgePPDB/>
             <HotNews/>
             <SlideItem/>
-            <Promo/>
+            <Promo/> 
             <PrevKesiswaan/>
             <Total/>
             <Advisor/>
             <ProfileBottom/>
             <FooterLayout/>
-            <Brosur/>
-
             <FloatMenu/>
         </>
     )

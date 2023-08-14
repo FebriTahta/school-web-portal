@@ -9,9 +9,7 @@
 
 (function($) {
     "use strict";
-
     
-
     $(document).on('ready', function() {
         setInterval(function(){
             document.querySelector('.promo-banner').classList.toggle('promo-banner--toggle');
@@ -47,6 +45,7 @@
             target: ".navbar-collapse",
             offset: 200
         });
+
         $('a.smooth-menu').on('click', function(event) {
             var $anchor = $(this);
             var headerH = '75';
@@ -60,7 +59,6 @@
             $(".float-toggle").toggleClass('open');
             $(".float-round").toggleClass('open');
             $(".float-line").toggleClass('open');
-            console.log('oke oke');
         });
 
 

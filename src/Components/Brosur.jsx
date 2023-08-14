@@ -38,10 +38,9 @@ export default function Brosur(params) {
         }
 
         if (count > 15) {
-            clearTimeout(timeout)
             handleClose()
+            clearTimeout(timeout)
         }
-        console.log(count)
 
     },[count])
 
@@ -52,9 +51,6 @@ export default function Brosur(params) {
 
     return(
         <>
-        {/* <Button variant="primary" onClick={handleShow}>
-            Launch static backdrop modal
-        </Button> */}
             <Modal
                 show={show}
                 onHide={handleClose}
@@ -85,10 +81,12 @@ export default function Brosur(params) {
                     
                 </Modal.Body>
                 <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
-                </Button>
-                {/* <Button variant="primary">Understood</Button> */}
+                    {(count < 15 ? <Button variant="danger" style={{float:"right"}} onClick={handleClose}>
+                        ({count} / 15)
+                    </Button> : null)}
+                    <Button variant="secondary" style={{float:"right"}} onClick={handleClose}>
+                        Close
+                    </Button>
                 </Modal.Footer>
             </Modal>
         </>

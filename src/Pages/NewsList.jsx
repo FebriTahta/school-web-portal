@@ -7,11 +7,16 @@ import {useEffect,useState} from "react"
 import { NavLink, useNavigate } from "react-router-dom";
 import Sosmed from '../Components/Sosmed';
 import KategoriBeritaPopuler from '../Components/KategoriBeritaPopuler';
+import Preloader from '../Components/Preloader';
+import 'react-loading-skeleton/dist/skeleton.css';
+import Skeleton from 'react-loading-skeleton';
+import FloatMenu from '../Components/FloatMenu';
 
 export default function NewsList() {
 
     const [dataBerita, setdataBerita] = useState([]);
-    
+    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading2, setIsLoading2] = useState(true);
     const ApiBerita = "https://admin.smkskrian1.com/api/daftar-berita?page=1";
     const ApiBeritaPopuler = "https://admin.smkskrian1.com/api/berita-populer";
     const ApiKategori = "https://admin.smkskrian1.com/api/daftar-kategori";
@@ -23,6 +28,7 @@ export default function NewsList() {
     }
  
     const daftarBerita = async () => {
+        setIsLoading2(true);
         try {
             const data = await fetch(ApiBerita);
             const response = await data.json();
@@ -31,10 +37,8 @@ export default function NewsList() {
         }   catch (err) { 
             console.log(err);
         }
+        setIsLoading2(false);
     }
-
-    
-
     
 
     const fetchPages = async (currnetPage) => {
@@ -68,6 +72,9 @@ export default function NewsList() {
 
     return(
         <>
+            {/* <Preloader/> */}
+            <Preloader/>
+            <FloatMenu/>
             <TopInfo/>
             <HeaderLayout/> 
             <HeroHeading judul={"Daftar Berita"}/>
@@ -80,7 +87,7 @@ export default function NewsList() {
                                     {/* Single Item */}
                                     <div className="single-item">
                                         <div className="row">
-                                        {(dataBerita.data ? dataBerita.data.map((a,i)=>{
+                                        {isLoading2 ? (<Skeleton count={4}/>) :(dataBerita.data ? dataBerita.data.map((a,i)=>{
                                             return <SingleNewsList key={i} 
                                             news_title={a.news_title} news_desc={a.news_desc}
                                             news_tanggal={new Date(a.created_at).getDate()}
@@ -121,6 +128,7 @@ export default function NewsList() {
                 </div>
             </div>
             <FooterLayout/>
+            <FloatMenu/>
         </>
     )
 }
